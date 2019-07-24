@@ -22,7 +22,7 @@ function usecollege (name){
   document.querySelector ("#output").innerHTML += `
     <table border>
 
-    <tr>
+    <tr colspan="5">
     <th>${name}</th>
     </tr>
 
