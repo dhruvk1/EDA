@@ -1,5 +1,1005 @@
-const colleges = [{"Name of College":"Princeton Universitya","Annual Cost":"59,820","State":"NJ","Type":"Private","Age (100% SL)":67.86631888,"Age (75% SL)":66.64014329,"Age (50% SL)":65.8226929,"Age (25%) SL":64.80087991,"Age (0% SL)":61.71641474,"Cost":"47,140","Room and Board":"12,680","Total Cost for 4 years":239280,"Average Starting Salary":"72,700","Average Mid Salary":"141,300","Average Salary":"90,000","Average Starting and MID":107000,"":"Average of 100-75 (%SL):","__1":1.042,"Difference between 0 and 100":6.149904142,"Difference between 0 and 25":1.22617559,"Difference between 25 and 50":0.817450393,"Difference between 50 and 75":1.021812991,"Difference between 75 and 100":3.084465169,"Years it takes to pay loans (0%)":33.29293914,"Years it takes to pay loans (25%)":26.65495124,"Years it takes to pay loans (50%)":22.22962597,"Years it takes to pay loans (75%)":16.69796939,"__2":"Public 4 Year","__3":11140},{"Name of College":"Harvard University","Annual Cost":"63,100","State":"MA","Type":"Private","Age (100% SL)":67.37884476,"Age (75% SL)":66.11728728,"Age (50% SL)":65.27624896,"Age (25%) SL":64.22495107,"Age (0% SL)":60.93597386,"Cost":"50,420","Room and Board":"12,680","Total Cost for 4 years":252400,"Average Starting Salary":"75,300","Average Mid Salary":"151,600","Average Salary":"88,000","Average Starting and MID":113450,"":"Average of 75-50 (%SL):","__1":1.007,"Difference between 0 and 100":6.442870896,"Difference between 0 and 25":1.261557475,"Difference between 25 and 50":0.8410383169,"Difference between 50 and 75":1.051297896,"Difference between 75 and 100":3.288977208,"Years it takes to pay loans (0%)":33.32995712,"Years it takes to pay loans (25%)":26.80372724,"Years it takes to pay loans (50%)":22.45290732,"Years it takes to pay loans (75%)":17.01438242,"__2":"Private 4 Year","__3":12680},{"Name of College":"Columbia University","Annual Cost":"72,110","State":"NY","Type":"Private","Age (100% SL)":69.19930773,"Age (75% SL)":67.69653485,"Age (50% SL)":66.69468626,"Age (25%) SL":65.44237553,"Age (0% SL)":62.24582157,"Cost":"59,430","Room and Board":"12,680","Total Cost for 4 years":288440,"Average Starting Salary":"71,000","Average Mid Salary":"134,600","Average Salary":"81,000","Average Starting and MID":102800,"":"Average of 50-25 (%SL):","__1":1.024,"Difference between 0 and 100":6.95348616,"Difference between 0 and 25":1.502772879,"Difference between 25 and 50":1.001848586,"Difference between 50 and 75":1.252310733,"Difference between 75 and 100":3.196553962,"Years it takes to pay loans (0%)":38.86797288,"Years it takes to pay loans (25%)":30.46790791,"Years it takes to pay loans (50%)":24.8678646,"Years it takes to pay loans (75%)":17.86781046,"__2":"","__3":""},{"Name of College":"Massachusetts Institute of Technology","Annual Cost":"64,512","State":"MA","Type":"Private","Age (100% SL)":67.0798845,"Age (75% SL)":65.7863859,"Age (50% SL)":64.9240535,"Age (25%) SL":63.84613801,"Age (0% SL)":60.80351662,"Cost":"51,832","Room and Board":"12,680","Total Cost for 4 years":258048,"Average Starting Salary":"83,600","Average Mid Salary":"150,400","Average Salary":"108,000","Average Starting and MID":117000,"":"Average of (25-0) (%SL)","__1":2.768,"Difference between 0 and 100":6.276367877,"Difference between 0 and 25":1.293498598,"Difference between 25 and 50":0.862332399,"Difference between 50 and 75":1.077915499,"Difference between 75 and 100":3.042621381,"Years it takes to pay loans (0%)":32.63377447,"Years it takes to pay loans (25%)":25.90826979,"Years it takes to pay loans (50%)":21.4246,"Years it takes to pay loans (75%)":15.82001277,"__2":"","__3":""},{"Name of College":"University of Chicago","Annual Cost":"69,686","State":"IL","Type":"Private","Age (100% SL)":70.16426305,"Age (75% SL)":68.66954125,"Age (50% SL)":67.67306005,"Age (25%) SL":66.42745855,"Age (0% SL)":63.30976402,"Cost":"57,006","Room and Board":"12,680","Total Cost for 4 years":278744,"Average Starting Salary":"63,700","Average Mid Salary":"123,200","Average Salary":"76,000","Average Starting and MID":93450,"":"Average of 100-0 (%SL)","__1":5.841,"Difference between 0 and 100":6.854499029,"Difference between 0 and 25":1.494721802,"Difference between 25 and 50":0.9964812011,"Difference between 50 and 75":1.245601501,"Difference between 75 and 100":3.117694525,"Years it takes to pay loans (0%)":40.6707694,"Years it takes to pay loans (25%)":31.80192494,"Years it takes to pay loans (50%)":25.88936197,"Years it takes to pay loans (75%)":18.49865826,"__2":"","__3":""},{"Name of College":"Yale University","Annual Cost":"66,110","State":"CT","Type":"Private","Age (100% SL)":68.03630853,"Age (75% SL)":66.69760905,"Age (50% SL)":65.80514272,"Age (25%) SL":64.68955982,"Age (0% SL)":61.37589797,"Cost":"53,430","Room and Board":"12,680","Total Cost for 4 years":264440,"Average Starting Salary":"72,300","Average Mid Salary":"146,300","Average Salary":"84,000","Average Starting and MID":109300,"":"","__1":"","Difference between 0 and 100":6.660410558,"Difference between 0 and 25":1.338699485,"Difference between 25 and 50":0.8924663234,"Difference between 50 and 75":1.115582904,"Difference between 75 and 100":3.313661845,"Years it takes to pay loans (0%)":35.25112201,"Years it takes to pay loans (25%)":28.16587427,"Years it takes to pay loans (50%)":23.44237577,"Years it takes to pay loans (75%)":17.53800265,"__2":"","__3":""},{"Name of College":"Stanford University","Annual Cost":"64,034","State":"CA","Type":"Private","Age (100% SL)":66.86652958,"Age (75% SL)":65.60172069,"Age (50% SL)":64.75851477,"Age (25%) SL":63.70450736,"Age (0% SL)":60.45426344,"Cost":"51,354","Room and Board":"12,680","Total Cost for 4 years":256136,"Average Starting Salary":"80,900","Average Mid Salary":"156,700","Average Salary":"103,000","Average Starting and MID":118800,"":"","__1":"Average of 100-75 (%SL):","Difference between 0 and 100":6.412266133,"Difference between 0 and 25":1.264808885,"Difference between 25 and 50":0.8432059233,"Difference between 50 and 75":1.054007404,"Difference between 75 and 100":3.250243921,"Years it takes to pay loans (0%)":32.48332489,"Years it takes to pay loans (25%)":26.0760428,"Years it takes to pay loans (50%)":21.80452141,"Years it takes to pay loans (75%)":16.46511967,"__2":"","__3":""},{"Name of College":"Duke University","Annual Cost":"68,640","State":"NC","Type":"Private","Age (100% SL)":68.46723491,"Age (75% SL)":67.29905855,"Age (50% SL)":66.13088219,"Age (25%) SL":64.96270583,"Age (0% SL)":61.6495604,"Cost":"55,960","Room and Board":"12,680","Total Cost for 4 years":274560,"Average Starting Salary":"71,200","Average Mid Salary":"142,800","Average Salary":"82,000","Average Starting and MID":107000,"":"","__1":1.042,"Difference between 0 and 100":6.817674503,"Difference between 0 and 25":1.168176359,"Difference between 25 and 50":1.168176359,"Difference between 50 and 75":1.168176359,"Difference between 75 and 100":3.313145425,"Years it takes to pay loans (0%)":36.65454902,"Years it takes to pay loans (25%)":30.37396499,"Years it takes to pay loans (50%)":24.09338095,"Years it takes to pay loans (75%)":17.81279692,"__2":"","__3":""},{"Name of College":"University of Pennsylvania","Annual Cost":"68,264","State":"PA","Type":"Private","Age (100% SL)":68.21010743,"Age (75% SL)":67.05509999,"Age (50% SL)":65.90009256,"Age (25%) SL":64.74508513,"Age (0% SL)":61.43675947,"Cost":"55,584","Room and Board":"12,680","Total Cost for 4 years":273056,"Average Starting Salary":"72,900","Average Mid Salary":"145,200","Average Salary":"81,000","Average Starting and MID":109050,"":"","__1":"","Difference between 0 and 100":6.773347957,"Difference between 0 and 25":1.155007433,"Difference between 25 and 50":1.155007433,"Difference between 50 and 75":1.155007433,"Difference between 75 and 100":3.308325659,"Years it takes to pay loans (0%)":36.02422837,"Years it takes to pay loans (25%)":29.88129112,"Years it takes to pay loans (50%)":23.73835386,"Years it takes to pay loans (75%)":17.5954166,"__2":"","__3":""},{"Name of College":"Johns Hopkins University","Annual Cost":"66,420","State":"MD","Type":"Private","Age (100% SL)":69.67203257,"Age (75% SL)":68.48419979,"Age (50% SL)":67.29636701,"Age (25%) SL":66.10853423,"Age (0% SL)":63.19875107,"Cost":"53,740","Room and Board":"12,680","Total Cost for 4 years":265680,"Average Starting Salary":"68,300","Average Mid Salary":"123,000","Average Salary":"84,000","Average Starting and MID":95650,"":"","__1":"Average of 75-50 (%SL):","Difference between 0 and 100":6.473281506,"Difference between 0 and 25":1.18783278,"Difference between 25 and 50":1.18783278,"Difference between 50 and 75":1.18783278,"Difference between 75 and 100":2.909783165,"Years it takes to pay loans (0%)":38.45155528,"Years it takes to pay loans (25%)":31.39578028,"Years it takes to pay loans (50%)":24.34000528,"Years it takes to pay loans (75%)":17.28423028,"__2":"","__3":""},{"Name of College":"Northwestern University","Annual Cost":"67,247","State":"IL","Type":"Private","Age (100% SL)":70.06597217,"Age (75% SL)":68.86087549,"Age (50% SL)":67.65577881,"Age (25%) SL":66.45068214,"Age (0% SL)":63.39391394,"Cost":"54,567","Room and Board":"12,680","Total Cost for 4 years":268988,"Average Starting Salary":"63,500","Average Mid Salary":"122,200","Average Salary":"80,000","Average Starting and MID":92850,"":"","__1":1.007,"Difference between 0 and 100":6.672058227,"Difference between 0 and 25":1.205096676,"Difference between 25 and 50":1.205096676,"Difference between 50 and 75":1.205096676,"Difference between 75 and 100":3.0567682,"Years it takes to pay loans (0%)":39.80985642,"Years it takes to pay loans (25%)":32.61946269,"Years it takes to pay loans (50%)":25.42906896,"Years it takes to pay loans (75%)":18.23867524,"__2":"","__3":""},{"Name of College":"California Institute of Technology","Annual Cost":"67,715","State":"CA","Type":"Private","Age (100% SL)":67.70235025,"Age (75% SL)":66.35113496,"Age (50% SL)":65.39916992,"Age (25%) SL":64.24757975,"Age (0% SL)":61.30882616,"Cost":"55,035","Room and Board":"12,680","Total Cost for 4 years":270860,"Average Starting Salary":"83,400","Average Mid Salary":"143,100","Average Salary":"107,000","Average Starting and MID":113250,"":"","__1":"","Difference between 0 and 100":6.393524087,"Difference between 0 and 25":1.351215285,"Difference between 25 and 50":0.9519650451,"Difference between 50 and 75":1.151590165,"Difference between 75 and 100":2.938753591,"Years it takes to pay loans (0%)":34.32721506,"Years it takes to pay loans (25%)":27.07245899,"Years it takes to pay loans (50%)":21.96130145,"Years it takes to pay loans (75%)":15.77834465,"__2":"","__3":""},{"Name of College":"Dartmouth","Annual Cost":"67,715","State":"NH","Type":"Private","Age (100% SL)":68.16088464,"Age (75% SL)":67.02152867,"Age (50% SL)":65.8821727,"Age (25%) SL":64.74281673,"Age (0% SL)":61.3317827,"Cost":"55,035","Room and Board":"12,680","Total Cost for 4 years":270860,"Average Starting Salary":"70,800","Average Mid Salary":"147,500","Average Salary":"84,000","Average Starting and MID":109150,"":"","__1":"Average of 50-25 (%SL):","Difference between 0 and 100":6.82910194,"Difference between 0 and 25":1.139355968,"Difference between 25 and 50":1.139355968,"Difference between 50 and 75":1.139355968,"Difference between 75 and 100":3.411034036,"Years it takes to pay loans (0%)":35.95406424,"Years it takes to pay loans (25%)":29.95554818,"Years it takes to pay loans (50%)":23.95703212,"Years it takes to pay loans (75%)":17.95851606,"__2":"","__3":""},{"Name of College":"Brown University","Annual Cost":"68,336","State":"RI","Type":"Private","Age (100% SL)":68.94063399,"Age (75% SL)":67.76383628,"Age (50% SL)":66.58703858,"Age (25%) SL":65.41024087,"Age (0% SL)":62.09334432,"Cost":"55,656","Room and Board":"12,680","Total Cost for 4 years":273344,"Average Starting Salary":"67,400","Average Mid Salary":"138,000","Average Salary":"79,000","Average Starting and MID":102700,"":"","__1":1.024,"Difference between 0 and 100":6.847289674,"Difference between 0 and 25":1.176797707,"Difference between 25 and 50":1.176797707,"Difference between 50 and 75":1.176797707,"Difference between 75 and 100":3.316896554,"Years it takes to pay loans (0%)":37.6476887,"Years it takes to pay loans (25%)":31.17743319,"Years it takes to pay loans (50%)":24.70717768,"Years it takes to pay loans (75%)":18.23692217,"__2":"","__3":""},{"Name of College":"Vanderbilt University","Annual Cost":"62,496","State":"TN","Type":"Private","Age (100% SL)":69.4201852,"Age (75% SL)":68.307667,"Age (50% SL)":67.1951488,"Age (25%) SL":66.0826306,"Age (0% SL)":63.12447207,"Cost":"49,816","Room and Board":"12,680","Total Cost for 4 years":249984,"Average Starting Salary":"65,900","Average Mid Salary":"124,800","Average Salary":"77,000","Average Starting and MID":95350,"":"","__1":"","Difference between 0 and 100":6.295713134,"Difference between 0 and 25":1.112518202,"Difference between 25 and 50":1.112518202,"Difference between 50 and 75":1.112518202,"Difference between 75 and 100":2.958158529,"Years it takes to pay loans (0%)":37.02767179,"Years it takes to pay loans (25%)":30.48449583,"Years it takes to pay loans (50%)":23.94131987,"Years it takes to pay loans (75%)":17.39814391,"__2":"","__3":""},{"Name of College":"Cornell University","Annual Cost":"67,868","State":"NY","Type":"Private","Age (100% SL)":69.52348568,"Age (75% SL)":68.32239501,"Age (50% SL)":67.12130434,"Age (25%) SL":65.92021367,"Age (0% SL)":62.8842631,"Cost":"55,188","Room and Board":"12,680","Total Cost for 4 years":271472,"Average Starting Salary":"68,200","Average Mid Salary":"127,100","Average Salary":"83,000","Average Starting and MID":97650,"":"","__1":"Average of (25-0) (%SL)","Difference between 0 and 100":6.639222579,"Difference between 0 and 25":1.20109067,"Difference between 25 and 50":1.20109067,"Difference between 50 and 75":1.20109067,"Difference between 75 and 100":3.03595057,"Years it takes to pay loans (0%)":38.56664847,"Years it takes to pay loans (25%)":31.5896205,"Years it takes to pay loans (50%)":24.61259253,"Years it takes to pay loans (75%)":17.63556456,"__2":"","__3":""},{"Name of College":"Rice University","Annual Cost":"60,030","State":"TX","Type":"Private","Age (100% SL)":68.52194264,"Age (75% SL)":67.47681674,"Age (50% SL)":66.43169084,"Age (25%) SL":65.38656494,"Age (0% SL)":62.36782145,"Cost":"47,350","Room and Board":"12,680","Total Cost for 4 years":240120,"Average Starting Salary":"69,200","Average Mid Salary":"133,600","Average Salary":"81,000","Average Starting and MID":101400,"":"","__1":2.768,"Difference between 0 and 100":6.154121186,"Difference between 0 and 25":1.045125899,"Difference between 25 and 50":1.045125899,"Difference between 50 and 75":1.045125899,"Difference between 75 and 100":3.018743488,"Years it takes to pay loans (0%)":34.57086789,"Years it takes to pay loans (25%)":28.6998575,"Years it takes to pay loans (50%)":22.82884712,"Years it takes to pay loans (75%)":16.95783673,"__2":"","__3":""},{"Name of College":"University of Notre Dame","Annual Cost":"66,071","State":"IN","Type":"Private","Age (100% SL)":68.83721537,"Age (75% SL)":67.69745109,"Age (50% SL)":66.55768682,"Age (25%) SL":65.41792254,"Age (0% SL)":62.14953379,"Cost":"53,391","Room and Board":"12,680","Total Cost for 4 years":264284,"Average Starting Salary":"67,200","Average Mid Salary":"137,300","Average Salary":"81,000","Average Starting and MID":102250,"":"","__1":"","Difference between 0 and 100":6.687681578,"Difference between 0 and 25":1.139764276,"Difference between 25 and 50":1.139764276,"Difference between 50 and 75":1.139764276,"Difference between 75 and 100":3.26838875,"Years it takes to pay loans (0%)":36.89366945,"Years it takes to pay loans (25%)":30.60597678,"Years it takes to pay loans (50%)":24.3182841,"Years it takes to pay loans (75%)":18.03059143,"__2":"","__3":""},{"Name of College":"University of California--Los Angeles","Annual Cost":"52,434","State":"CA","Type":"Public","Age (100% SL)":68.97572363,"Age (75% SL)":68.04065138,"Age (50% SL)":67.10557912,"Age (25%) SL":66.17050687,"Age (0% SL)":63.286036,"Cost":"41,294","Room and Board":"11,140","Total Cost for 4 years":209736,"Average Starting Salary":"62,000","Average Mid Salary":"124,100","Average Salary":"81,000","Average Starting and MID":93050,"":"","__1":"Average of 100-0 (%SL)","Difference between 0 and 100":5.689687636,"Difference between 0 and 25":0.9350722545,"Difference between 25 and 50":0.9350722545,"Difference between 50 and 75":0.9350722545,"Difference between 75 and 100":2.884470873,"Years it takes to pay loans (0%)":33.59196624,"Years it takes to pay loans (25%)":28.07129136,"Years it takes to pay loans (50%)":22.55061648,"Years it takes to pay loans (75%)":17.0299416,"__2":"","__3":""},{"Name of College":"Washington University in St. Louis","Annual Cost":"66,079","State":"MO","Type":"Private","Age (100% SL)":70.02379089,"Age (75% SL)":68.83257974,"Age (50% SL)":67.64136858,"Age (25%) SL":66.45015743,"Age (0% SL)":63.52636027,"Cost":"53,399","Room and Board":"12,680","Total Cost for 4 years":264316,"Average Starting Salary":"65,300","Average Mid Salary":"119,900","Average Salary":"73,000","Average Starting and MID":92600,"":"","__1":5.841,"Difference between 0 and 100":6.497430625,"Difference between 0 and 25":1.191211153,"Difference between 25 and 50":1.191211153,"Difference between 50 and 75":1.191211153,"Difference between 75 and 100":2.923797167,"Years it takes to pay loans (0%)":39.27788937,"Years it takes to pay loans (25%)":32.07684905,"Years it takes to pay loans (50%)":24.87580874,"Years it takes to pay loans (75%)":17.67476842,"__2":"","__3":""},{"Name of College":"Emory University","Annual Cost":"63,986","State":"GA","Type":"Private","Age (100% SL)":69.95453124,"Age (75% SL)":68.80550932,"Age (50% SL)":67.6564874,"Age (25%) SL":66.50746548,"Age (0% SL)":63.49031094,"Cost":"51,306","Room and Board":"12,680","Total Cost for 4 years":255944,"Average Starting Salary":"62,300","Average Mid Salary":"121,400","Average Salary":"71,000","Average Starting and MID":91850,"":"","__1":"","Difference between 0 and 100":6.464220292,"Difference between 0 and 25":1.149021917,"Difference between 25 and 50":1.149021917,"Difference between 50 and 75":1.149021917,"Difference between 75 and 100":3.01715454,"Years it takes to pay loans (0%)":38.74405511,"Years it takes to pay loans (25%)":31.85725879,"Years it takes to pay loans (50%)":24.97046248,"Years it takes to pay loans (75%)":18.08366617,"__2":"","__3":""},{"Name of College":"Georgetown University","Annual Cost":"66,784","State":"DC","Type":"Private","Age (100% SL)":68.81266001,"Age (75% SL)":67.66824501,"Age (50% SL)":66.52383001,"Age (25%) SL":65.379415,"Age (0% SL)":61.99381967,"Cost":"54,104","Room and Board":"12,680","Total Cost for 4 years":267136,"Average Starting Salary":"65,700","Average Mid Salary":"140,000","Average Salary":"77,000","Average Starting and MID":102850,"":"","__1":"","Difference between 0 and 100":6.818840341,"Difference between 0 and 25":1.144415003,"Difference between 25 and 50":1.144415003,"Difference between 50 and 75":1.144415003,"Difference between 75 and 100":3.385595331,"Years it takes to pay loans (0%)":37.13832686,"Years it takes to pay loans (25%)":30.90535229,"Years it takes to pay loans (50%)":24.67237771,"Years it takes to pay loans (75%)":18.43940314,"__2":"","__3":""},{"Name of College":"University of California- Berkley","Annual Cost":"54,372","State":"CA","Type":"Public","Age (100% SL)":67.71876107,"Age (75% SL)":66.78726796,"Age (50% SL)":65.85577486,"Age (25%) SL":64.92428176,"Age (0% SL)":61.87580103,"Cost":"43,232","Room and Board":"11,140","Total Cost for 4 years":217488,"Average Starting Salary":"69,900","Average Mid Salary":"140,100","Average Salary":"84,000","Average Starting and MID":105000,"":"","__1":"","Difference between 0 and 100":5.842960033,"Difference between 0 and 25":0.9314931017,"Difference between 25 and 50":0.9314931017,"Difference between 50 and 75":0.9314931017,"Difference between 75 and 100":3.048480728,"Years it takes to pay loans (0%)":31.80836959,"Years it takes to pay loans (25%)":26.73743351,"Years it takes to pay loans (50%)":21.66649743,"Years it takes to pay loans (75%)":16.59556135,"__2":"","__3":""},{"Name of College":"University of Southern California","Annual Cost":"68,905","State":"CA","Type":"Private","Age (100% SL)":70.24756955,"Age (75% SL)":69.01402962,"Age (50% SL)":67.78048969,"Age (25%) SL":66.54694976,"Age (0% SL)":63.40376777,"Cost":"56,225","Room and Board":"12,680","Total Cost for 4 years":275620,"Average Starting Salary":"62,000","Average Mid Salary":"122,600","Average Salary":"82,000","Average Starting and MID":92300,"":"","__1":"","Difference between 0 and 100":6.843801781,"Difference between 0 and 25":1.23353993,"Difference between 25 and 50":1.23353993,"Difference between 50 and 75":1.23353993,"Difference between 75 and 100":3.143181992,"Years it takes to pay loans (0%)":40.74322859,"Years it takes to pay loans (25%)":33.3995911,"Years it takes to pay loans (50%)":26.05595361,"Years it takes to pay loans (75%)":18.71231612,"__2":"","__3":""},{"Name of College":"Carnegie Mellon University","Annual Cost":"68,145","State":"PA","Type":"Private","Age (100% SL)":68.56609933,"Age (75% SL)":67.38764009,"Age (50% SL)":66.20918086,"Age (25%) SL":65.03072162,"Age (0% SL)":62.00145587,"Cost":"55,465","Room and Board":"12,680","Total Cost for 4 years":272580,"Average Starting Salary":"75,500","Average Mid Salary":"136,300","Average Salary":"95,000","Average Starting and MID":105900,"":"","__1":"","Difference between 0 and 100":6.564643461,"Difference between 0 and 25":1.178459236,"Difference between 25 and 50":1.178459236,"Difference between 50 and 75":1.178459236,"Difference between 75 and 100":3.029265754,"Years it takes to pay loans (0%)":36.39030393,"Years it takes to pay loans (25%)":29.85765824,"Years it takes to pay loans (50%)":23.32501256,"Years it takes to pay loans (75%)":16.79236688,"__2":"","__3":""},{"Name of College":"University of Virginia","Annual Cost":"60,031","State":"VA","Type":"Public","Age (100% SL)":69.33177261,"Age (75% SL)":68.26395325,"Age (50% SL)":67.1961339,"Age (25%) SL":66.12831455,"Age (0% SL)":63.15051476,"Cost":"48,891","Room and Board":"11,140","Total Cost for 4 years":240124,"Average Starting Salary":"64,100","Average Mid Salary":"125,100","Average Salary":"76,000","Average Starting and MID":94600,"":"","__1":"","Difference between 0 and 100":6.181257844,"Difference between 0 and 25":1.067819353,"Difference between 25 and 50":1.067819353,"Difference between 50 and 75":1.067819353,"Difference between 75 and 100":2.977799784,"Years it takes to pay loans (0%)":36.29512562,"Years it takes to pay loans (25%)":30.02510121,"Years it takes to pay loans (50%)":23.7550768,"Years it takes to pay loans (75%)":17.48505239,"__2":"","__3":""},{"Name of College":"Tufts University","Annual Cost":"69,062","State":"MA","Type":"Private","Age (100% SL)":69.6380798,"Age (75% SL)":68.42387563,"Age (50% SL)":67.20967147,"Age (25%) SL":65.9954673,"Age (0% SL)":62.77584728,"Cost":"56,382","Room and Board":"12,680","Total Cost for 4 years":276248,"Average Starting Salary":"64,900","Average Mid Salary":"129,700","Average Salary":"78,000","Average Starting and MID":97300,"":"","__1":"","Difference between 0 and 100":6.862232519,"Difference between 0 and 25":1.214204164,"Difference between 25 and 50":1.214204164,"Difference between 50 and 75":1.214204164,"Difference between 75 and 100":3.219620025,"Years it takes to pay loans (0%)":39.32093624,"Years it takes to pay loans (25%)":32.36348552,"Years it takes to pay loans (50%)":25.40603481,"Years it takes to pay loans (75%)":18.4485841,"__2":"","__3":""},{"Name of College":"University of Michigan -Ann Arbor","Annual Cost":"60,490","State":"MI","Type":"Public","Age (100% SL)":70.01415482,"Age (75% SL)":68.91027568,"Age (50% SL)":67.80639654,"Age (25%) SL":66.70251741,"Age (0% SL)":63.94752095,"Cost":"49,350","Room and Board":"11,140","Total Cost for 4 years":241960,"Average Starting Salary":"63,800","Average Mid Salary":"115,200","Average Salary":"78,000","Average Starting and MID":89500,"":"","__1":"","Difference between 0 and 100":6.066633869,"Difference between 0 and 25":1.103879138,"Difference between 25 and 50":1.103879138,"Difference between 50 and 75":1.103879138,"Difference between 75 and 100":2.754996456,"Years it takes to pay loans (0%)":37.70581467,"Years it takes to pay loans (25%)":30.8448992,"Years it takes to pay loans (50%)":23.98398372,"Years it takes to pay loans (75%)":17.12306825,"__2":"","__3":""},{"Name of College":"Wake Forest University","Annual Cost":"66,002","State":"NC","Type":"Private","Age (100% SL)":70.52651951,"Age (75% SL)":69.33268164,"Age (50% SL)":68.13884377,"Age (25%) SL":66.94500589,"Age (0% SL)":63.82806714,"Cost":"53,322","Room and Board":"12,680","Total Cost for 4 years":264008,"Average Starting Salary":"58,200","Average Mid Salary":"118,600","Average Salary":"71,000","Average Starting and MID":88400,"":"","__1":"","Difference between 0 and 100":6.698452369,"Difference between 0 and 25":1.193837872,"Difference between 25 and 50":1.193837872,"Difference between 50 and 75":1.193837872,"Difference between 75 and 100":3.116938754,"Years it takes to pay loans (0%)":40.79927934,"Years it takes to pay loans (25%)":33.52779003,"Years it takes to pay loans (50%)":26.25630072,"Years it takes to pay loans (75%)":18.9848114,"__2":"","__3":""},{"Name of College":"New York University","Annual Cost":"64,508","State":"NY","Type":"Private","Age (100% SL)":73.99542854,"Age (75% SL)":72.67894645,"Age (50% SL)":71.36246437,"Age (25%) SL":70.04598228,"Age (0% SL)":67.96433034,"Cost":"51,828","Room and Board":"12,680","Total Cost for 4 years":258032,"Average Starting Salary":"53,500","Average Mid Salary":"74,800","Average Salary":"74,000","Average Starting and MID":64150,"":"","__1":"","Difference between 0 and 100":6.031098196,"Difference between 0 and 25":1.316482085,"Difference between 25 and 50":1.316482085,"Difference between 50 and 75":1.316482085,"Difference between 75 and 100":2.081651941,"Years it takes to pay loans (0%)":51.62313663,"Years it takes to pay loans (25%)":40.35471878,"Years it takes to pay loans (50%)":29.08630094,"Years it takes to pay loans (75%)":17.81788309,"__2":"","__3":""},{"Name of College":"University of California- Santa Barbara","Annual Cost":"53,626","State":"CA","Type":"Public","Age (100% SL)":69.50040414,"Age (75% SL)":68.53766893,"Age (50% SL)":67.57493372,"Age (25%) SL":66.6121985,"Age (0% SL)":63.62064405,"Cost":"42,486","Room and Board":"11,140","Total Cost for 4 years":214504,"Average Starting Salary":"57,300","Average Mid Salary":"121,500","Average Salary":"75,000","Average Starting and MID":89400,"":"","__1":"","Difference between 0 and 100":5.879760089,"Difference between 0 and 25":0.9627352134,"Difference between 25 and 50":0.9627352134,"Difference between 50 and 75":0.9627352134,"Difference between 75 and 100":2.991554449,"Years it takes to pay loans (0%)":35.22109374,"Years it takes to pay loans (25%)":29.45409191,"Years it takes to pay loans (50%)":23.68709008,"Years it takes to pay loans (75%)":17.92008825,"__2":"","__3":""},{"Name of College":"University of North Carolina- Chapel Hill","Annual Cost":"46,309","State":"NC","Type":"Public","Age (100% SL)":70.36785155,"Age (75% SL)":69.49250259,"Age (50% SL)":68.61715362,"Age (25%) SL":67.74180466,"Age (0% SL)":65.31260398,"Cost":"35,169","Room and Board":"11,140","Total Cost for 4 years":185236,"Average Starting Salary":"55,300","Average Mid Salary":"102,000","Average Salary":"68,000","Average Starting and MID":78650,"":"","__1":"","Difference between 0 and 100":5.055247573,"Difference between 0 and 25":0.8753489638,"Difference between 25 and 50":0.8753489638,"Difference between 50 and 75":0.8753489638,"Difference between 75 and 100":2.429200682,"Years it takes to pay loans (0%)":34.25921456,"Years it takes to pay loans (25%)":28.32700896,"Years it takes to pay loans (50%)":22.39480336,"Years it takes to pay loans (75%)":16.46259776,"__2":"","__3":""},{"Name of College":"University of Calfornia -Irvine","Annual Cost":"54,670","State":"CA","Type":"Public","Age (100% SL)":69.5327133,"Age (75% SL)":68.55199336,"Age (50% SL)":67.57127342,"Age (25%) SL":66.59055348,"Age (0% SL)":63.5857388,"Cost":"43,530","Room and Board":"11,140","Total Cost for 4 years":218680,"Average Starting Salary":"57,700","Average Mid Salary":"121,800","Average Salary":"74,000","Average Starting and MID":89750,"":"","__1":"","Difference between 0 and 100":5.946974498,"Difference between 0 and 25":0.9807199417,"Difference between 25 and 50":0.9807199417,"Difference between 50 and 75":0.9807199417,"Difference between 75 and 100":3.004814673,"Years it takes to pay loans (0%)":35.56344458,"Years it takes to pay loans (25%)":29.69865076,"Years it takes to pay loans (50%)":23.83385694,"Years it takes to pay loans (75%)":17.96906312,"__2":"","__3":""},{"Name of College":"University of Rochester","Annual Cost":"66,606","State":"NY","Type":"Private","Age (100% SL)":70.19013928,"Age (75% SL)":68.99406898,"Age (50% SL)":67.79799869,"Age (25%) SL":66.60192839,"Age (0% SL)":63.51243773,"Cost":"53,926","Room and Board":"12,680","Total Cost for 4 years":266424,"Average Starting Salary":"61,500","Average Mid Salary":"121,400","Average Salary":"77,000","Average Starting and MID":91450,"":"","__1":"","Difference between 0 and 100":6.67770155,"Difference between 0 and 25":1.196070294,"Difference between 25 and 50":1.196070294,"Difference between 50 and 75":1.196070294,"Difference between 75 and 100":3.089490668,"Years it takes to pay loans (0%)":40.02357982,"Years it takes to pay loans (25%)":32.8547936,"Years it takes to pay loans (50%)":25.68600737,"Years it takes to pay loans (75%)":18.51722115,"__2":"","__3":""},{"Name of College":"Brandeis University","Annual Cost":"68,075","State":"MA","Type":"Private","Age (100% SL)":70.70178653,"Age (75% SL)":69.46981289,"Age (50% SL)":68.23783925,"Age (25%) SL":67.00586561,"Age (0% SL)":63.84979224,"Cost":"55,395","Room and Board":"12,680","Total Cost for 4 years":272300,"Average Starting Salary":"58,000","Average Mid Salary":"118,400","Average Salary":"73,000","Average Starting and MID":88200,"":"","__1":"","Difference between 0 and 100":6.851994287,"Difference between 0 and 25":1.231973641,"Difference between 25 and 50":1.231973641,"Difference between 50 and 75":1.231973641,"Difference between 75 and 100":3.156073364,"Years it takes to pay loans (0%)":41.78327597,"Years it takes to pay loans (25%)":34.27073401,"Years it takes to pay loans (50%)":26.75819204,"Years it takes to pay loans (75%)":19.24565007,"__2":"","__3":""},{"Name of College":"Georgia Institute of Technology","Annual Cost":"44,160","State":"GA","Type":"Public","Age (100% SL)":67.42003499,"Age (75% SL)":66.64792747,"Age (50% SL)":65.87581995,"Age (25%) SL":65.10371244,"Age (0% SL)":62.45113323,"Cost":"33,020","Room and Board":"11,140","Total Cost for 4 years":176640,"Average Starting Salary":"70,800","Average Mid Salary":"131,900","Average Salary":"83,000","Average Starting and MID":101350,"":"","__1":"","Difference between 0 and 100":4.968901765,"Difference between 0 and 25":0.7721075186,"Difference between 25 and 50":0.7721075186,"Difference between 50 and 75":0.7721075186,"Difference between 75 and 100":2.652579209,"Years it takes to pay loans (0%)":28.152558,"Years it takes to pay loans (25%)":23.77798939,"Years it takes to pay loans (50%)":19.40342077,"Years it takes to pay loans (75%)":15.02885216,"__2":"","__3":""},{"Name of College":"University of Florida","Annual Cost":"39,798","State":"FL","Type":"Public","Age (100% SL)":69.52709621,"Age (75% SL)":68.78349358,"Age (50% SL)":68.03989094,"Age (25%) SL":67.29628831,"Age (0% SL)":64.90821342,"Cost":"28,658","Room and Board":"11,140","Total Cost for 4 years":159192,"Average Starting Salary":"56,300","Average Mid Salary":"106,300","Average Salary":"71,000","Average Starting and MID":81300,"":"","__1":"","Difference between 0 and 100":4.618882788,"Difference between 0 and 25":0.7436026347,"Difference between 25 and 50":0.7436026347,"Difference between 50 and 75":0.7436026347,"Difference between 75 and 100":2.388074884,"Years it takes to pay loans (0%)":30.38610038,"Years it takes to pay loans (25%)":25.49418488,"Years it takes to pay loans (50%)":20.60226938,"Years it takes to pay loans (75%)":15.71035388,"__2":"","__3":""},{"Name of College":"Boston College","Annual Cost":"68,144","State":"MA","Type":"Private","Age (100% SL)":70.5381787,"Age (75% SL)":69.30271043,"Age (50% SL)":68.06724215,"Age (25%) SL":66.83177388,"Age (0% SL)":63.80593184,"Cost":"55,464","Room and Board":"12,680","Total Cost for 4 years":272576,"Average Starting Salary":"61,600","Average Mid Salary":"117,700","Average Salary":"73,000","Average Starting and MID":89650,"":"","__1":"","Difference between 0 and 100":6.732246862,"Difference between 0 and 25":1.235468272,"Difference between 25 and 50":1.235468272,"Difference between 50 and 75":1.235468272,"Difference between 75 and 100":3.025842047,"Years it takes to pay loans (0%)":41.2221424,"Years it takes to pay loans (25%)":33.657261,"Years it takes to pay loans (50%)":26.09237961,"Years it takes to pay loans (75%)":18.52749822,"__2":"","__3":""},{"Name of College":"Colleges of William and Mary","Annual Cost":"55,841","State":"VA","Type":"Public","Age (100% SL)":69.6026901,"Age (75% SL)":68.59863751,"Age (50% SL)":67.59458492,"Age (25%) SL":66.59053234,"Age (0% SL)":63.62415068,"Cost":"44,701","Room and Board":"11,140","Total Cost for 4 years":223364,"Average Starting Salary":"58,900","Average Mid Salary":"120,900","Average Salary":"68,000","Average Starting and MID":89900,"":"","__1":"","Difference between 0 and 100":5.97853942,"Difference between 0 and 25":1.00405259,"Difference between 25 and 50":1.00405259,"Difference between 50 and 75":1.00405259,"Difference between 75 and 100":2.966381651,"Years it takes to pay loans (0%)":35.93490376,"Years it takes to pay loans (25%)":29.89989577,"Years it takes to pay loans (50%)":23.86488778,"Years it takes to pay loans (75%)":17.82987979,"__2":"","__3":""},{"Name of College":"University of California -Davis","Annual Cost":"54,598","State":"CA","Type":"Public","Age (100% SL)":69.94051441,"Age (75% SL)":68.94049182,"Age (50% SL)":67.94046923,"Age (25%) SL":66.94044663,"Age (0% SL)":64.1865078,"Cost":"43,458","Room and Board":"11,140","Total Cost for 4 years":218392,"Average Starting Salary":"59,400","Average Mid Salary":"113,800","Average Salary":"76,000","Average Starting and MID":86600,"":"","__1":"","Difference between 0 and 100":5.754006616,"Difference between 0 and 25":1.000022593,"Difference between 25 and 50":1.000022593,"Difference between 50 and 75":1.000022593,"Difference between 75 and 100":2.753938837,"Years it takes to pay loans (0%)":36.06998656,"Years it takes to pay loans (25%)":29.80117181,"Years it takes to pay loans (50%)":23.53235707,"Years it takes to pay loans (75%)":17.26354233,"__2":"","__3":""},{"Name of College":"University of California -- San Diego","Annual Cost":"53,214","State":"CA","Type":"Public","Age (100% SL)":68.41534089,"Age (75% SL)":67.48818706,"Age (50% SL)":66.56103323,"Age (25%) SL":65.63387939,"Age (0% SL)":62.55374615,"Cost":"42,074","Room and Board":"11,140","Total Cost for 4 years":212856,"Average Starting Salary":"63,100","Average Mid Salary":"133,300","Average Salary":"76,000","Average Starting and MID":98200,"":"","__1":"","Difference between 0 and 100":5.861594746,"Difference between 0 and 25":0.9271538328,"Difference between 25 and 50":0.9271538328,"Difference between 50 and 75":0.9271538328,"Difference between 75 and 100":3.080133248,"Years it takes to pay loans (0%)":32.97696707,"Years it takes to pay loans (25%)":27.76085733,"Years it takes to pay loans (50%)":22.5447476,"Years it takes to pay loans (75%)":17.32863787,"__2":"","__3":""},{"Name of College":"Boston University","Annual Cost":"66,628","State":"MA","Type":"Private","Age (100% SL)":70.72365083,"Age (75% SL)":69.50934958,"Age (50% SL)":68.29504833,"Age (25%) SL":67.08074707,"Age (0% SL)":64.04425072,"Cost":"53,948","Room and Board":"12,680","Total Cost for 4 years":266512,"Average Starting Salary":"58,900","Average Mid Salary":"115,700","Average Salary":"75,000","Average Starting and MID":87300,"":"","__1":"","Difference between 0 and 100":6.679400115,"Difference between 0 and 25":1.214301254,"Difference between 25 and 50":1.214301254,"Difference between 50 and 75":1.214301254,"Difference between 75 and 100":3.036496354,"Years it takes to pay loans (0%)":41.38904425,"Years it takes to pay loans (25%)":33.86460082,"Years it takes to pay loans (50%)":26.34015739,"Years it takes to pay loans (75%)":18.81571396,"__2":"","__3":""},{"Name of College":"Case Western Reserve University","Annual Cost":"61,722","State":"OH","Type":"Private","Age (100% SL)":70.11787325,"Age (75% SL)":68.98736674,"Age (50% SL)":67.85686023,"Age (25%) SL":66.72635372,"Age (0% SL)":64.02570527,"Cost":"49,042","Room and Board":"12,680","Total Cost for 4 years":246888,"Average Starting Salary":"65,100","Average Mid Salary":"113,800","Average Salary":"74,000","Average Starting and MID":89450,"":"","__1":"","Difference between 0 and 100":6.092167976,"Difference between 0 and 25":1.130506511,"Difference between 25 and 50":1.130506511,"Difference between 50 and 75":1.130506511,"Difference between 75 and 100":2.700648442,"Years it takes to pay loans (0%)":38.18980958,"Years it takes to pay loans (25%)":31.10303381,"Years it takes to pay loans (50%)":24.01625804,"Years it takes to pay loans (75%)":16.92948227,"__2":"","__3":""},{"Name of College":"Northeastern University","Annual Cost":"64,067","State":"MA","Type":"Private","Age (100% SL)":71.06668946,"Age (75% SL)":69.86834938,"Age (50% SL)":68.67000931,"Age (25%) SL":67.47166923,"Age (0% SL)":64.80159256,"Cost":"51,387","Room and Board":"12,680","Total Cost for 4 years":256268,"Average Starting Salary":"61,200","Average Mid Salary":"105,900","Average Salary":"75,000","Average Starting and MID":83550,"":"","__1":"","Difference between 0 and 100":6.265096903,"Difference between 0 and 25":1.198340075,"Difference between 25 and 50":1.198340075,"Difference between 50 and 75":1.198340075,"Difference between 75 and 100":2.670076677,"Years it takes to pay loans (0%)":41.32730647,"Years it takes to pay loans (25%)":33.42253368,"Years it takes to pay loans (50%)":25.51776088,"Years it takes to pay loans (75%)":17.61298809,"__2":"","__3":""},{"Name of College":"Tulane University","Annual Cost":"67,500","State":"LA","Type":"Private","Age (100% SL)":70.91582621,"Age (75% SL)":69.68466672,"Age (50% SL)":68.45350724,"Age (25%) SL":67.22234776,"Age (0% SL)":64.11940325,"Cost":"54,820","Room and Board":"12,680","Total Cost for 4 years":270000,"Average Starting Salary":"57,100","Average Mid Salary":"115,400","Average Salary":"65,000","Average Starting and MID":86250,"":"","__1":"","Difference between 0 and 100":6.796422963,"Difference between 0 and 25":1.231159484,"Difference between 25 and 50":1.231159484,"Difference between 50 and 75":1.231159484,"Difference between 75 and 100":3.102944512,"Years it takes to pay loans (0%)":42.19053293,"Years it takes to pay loans (25%)":34.54779571,"Years it takes to pay loans (50%)":26.90505849,"Years it takes to pay loans (75%)":19.26232127,"__2":"","__3":""},{"Name of College":"Pepperdine University","Annual Cost":"66,612","State":"CA","Type":"Private","Age (100% SL)":71.63205482,"Age (75% SL)":70.3824223,"Age (50% SL)":69.13278979,"Age (25%) SL":67.88315728,"Age (0% SL)":65.03524767,"Cost":"53,932","Room and Board":"12,680","Total Cost for 4 years":266448,"Average Starting Salary":"56,400","Average Mid Salary":"104,800","Average Salary":"70,000","Average Starting and MID":80600,"":"","__1":"","Difference between 0 and 100":6.59680715,"Difference between 0 and 25":1.249632513,"Difference between 25 and 50":1.249632513,"Difference between 50 and 75":1.249632513,"Difference between 75 and 100":2.847909612,"Years it takes to pay loans (0%)":43.84232996,"Years it takes to pay loans (25%)":35.53728182,"Years it takes to pay loans (50%)":27.23223368,"Years it takes to pay loans (75%)":18.92718554,"__2":"","__3":""},{"Name of College":"University of Georgia","Annual Cost":"41,544","State":"GA","Type":"Public","Age (100% SL)":70.31334132,"Age (75% SL)":69.52377872,"Age (50% SL)":68.73421612,"Age (25%) SL":67.94465351,"Age (0% SL)":65.56934545,"Cost":"30,404","Room and Board":"11,140","Total Cost for 4 years":166176,"Average Starting Salary":"52,600","Average Mid Salary":"100,000","Average Salary":"63,000","Average Starting and MID":76300,"":"","__1":"","Difference between 0 and 100":4.743995869,"Difference between 0 and 25":0.7895626036,"Difference between 25 and 50":0.7895626036,"Difference between 50 and 75":0.7895626036,"Difference between 75 and 100":2.375308058,"Years it takes to pay loans (0%)":32.6149716,"Years it takes to pay loans (25%)":27.1867287,"Years it takes to pay loans (50%)":21.7584858,"Years it takes to pay loans (75%)":16.3302429,"__2":"","__3":""},{"Name of College":"University of Illinois -- Urbana-Champaign","Annual Cost":"43,708","State":"IL","Type":"Public","Age (100% SL)":69.04594164,"Age (75% SL)":68.24538141,"Age (50% SL)":67.44482118,"Age (25%) SL":66.64426095,"Age (0% SL)":64.14137025,"Cost":"32,568","Room and Board":"11,140","Total Cost for 4 years":174832,"Average Starting Salary":"61,000","Average Mid Salary":"113,800","Average Salary":"75,000","Average Starting and MID":87400,"":"","__1":"","Difference between 0 and 100":4.904571397,"Difference between 0 and 25":0.8005602313,"Difference between 25 and 50":0.8005602313,"Difference between 50 and 75":0.8005602313,"Difference between 75 and 100":2.502890703,"Years it takes to pay loans (0%)":30.74515483,"Years it takes to pay loans (25%)":25.72670444,"Years it takes to pay loans (50%)":20.70825404,"Years it takes to pay loans (75%)":15.68980365,"__2":"","__3":""},{"Name of College":"Rensselaer Polytechnic Institute","Annual Cost":"66,560","State":"NY","Type":"Private","Age (100% SL)":69.05667345,"Age (75% SL)":67.89204058,"Age (50% SL)":66.7274077,"Age (25%) SL":65.56277482,"Age (0% SL)":62.49777369,"Cost":"53,880","Room and Board":"12,680","Total Cost for 4 years":266240,"Average Starting Salary":"69,900","Average Mid Salary":"131,600","Average Salary":"86,000","Average Starting and MID":100750,"":"","__1":"","Difference between 0 and 100":6.558899766,"Difference between 0 and 25":1.164632876,"Difference between 25 and 50":1.164632876,"Difference between 50 and 75":1.164632876,"Difference between 75 and 100":3.065001138,"Years it takes to pay loans (0%)":37.217769,"Years it takes to pay loans (25%)":30.60918541,"Years it takes to pay loans (50%)":24.00060182,"Years it takes to pay loans (75%)":17.39201824,"__2":"","__3":""},{"Name of College":"University of Texas -- Austin","Annual Cost":"48,620","State":"TX","Type":"Public","Age (100% SL)":69.67633476,"Age (75% SL)":68.78015267,"Age (50% SL)":67.88397059,"Age (25%) SL":66.9877885,"Age (0% SL)":64.39469229,"Cost":"37,480","Room and Board":"11,140","Total Cost for 4 years":194480,"Average Starting Salary":"59,100","Average Mid Salary":"111,400","Average Salary":"73,000","Average Starting and MID":85250,"":"","__1":"","Difference between 0 and 100":5.281642462,"Difference between 0 and 25":0.8961820843,"Difference between 25 and 50":0.8961820843,"Difference between 50 and 75":0.8961820843,"Difference between 75 and 100":2.593096209,"Years it takes to pay loans (0%)":33.60883573,"Years it takes to pay loans (25%)":27.90613308,"Years it takes to pay loans (50%)":22.20343043,"Years it takes to pay loans (75%)":16.50072778,"__2":"","__3":""},{"Name of College":"University of Wisconsin -- Madison","Annual Cost":"47,945","State":"WI","Type":"Public","Age (100% SL)":70.48041675,"Age (75% SL)":69.57365163,"Age (50% SL)":68.6668865,"Age (25%) SL":67.76012138,"Age (0% SL)":65.31863579,"Cost":"36,805","Room and Board":"11,140","Total Cost for 4 years":191780,"Average Starting Salary":"55,700","Average Mid Salary":"101,800","Average Salary":"71,000","Average Starting and MID":78750,"":"","__1":"","Difference between 0 and 100":5.161780966,"Difference between 0 and 25":0.9067651257,"Difference between 25 and 50":0.9067651257,"Difference between 50 and 75":0.9067651257,"Difference between 75 and 100":2.441485589,"Years it takes to pay loans (0%)":35.03089808,"Years it takes to pay loans (25%)":28.87705372,"Years it takes to pay loans (50%)":22.72320936,"Years it takes to pay loans (75%)":16.56936499,"__2":"","__3":""},{"Name of College":"Villanova University","Annual Cost":"66,138","State":"PA","Type":"Private","Age (100% SL)":74.13297993,"Age (75% SL)":72.78520624,"Age (50% SL)":71.43743255,"Age (25%) SL":70.08965886,"Age (0% SL)":67.93478897,"Cost":"53,458","Room and Board":"12,680","Total Cost for 4 years":264552,"Average Starting Salary":"52,800","Average Mid Salary":"75,300","Average Salary":"80,000","Average Starting and MID":64050,"":"","__1":"","Difference between 0 and 100":6.198190966,"Difference between 0 and 25":1.347773689,"Difference between 25 and 50":1.347773689,"Difference between 50 and 75":1.347773689,"Difference between 75 and 100":2.154869898,"Years it takes to pay loans (0%)":52.77825458,"Years it takes to pay loans (25%)":41.30181843,"Years it takes to pay loans (50%)":29.82538227,"Years it takes to pay loans (75%)":18.34894612,"__2":"","__3":""},{"Name of College":"Lehigh University","Annual Cost":"65,610","State":"PA","Type":"Private","Age (100% SL)":68.9000668,"Age (75% SL)":67.76375444,"Age (50% SL)":66.62744207,"Age (25%) SL":65.4911297,"Age (0% SL)":62.2665065,"Cost":"52,930","Room and Board":"12,680","Total Cost for 4 years":262440,"Average Starting Salary":"67,200","Average Mid Salary":"135,700","Average Salary":"80,000","Average Starting and MID":101450,"":"","__1":"","Difference between 0 and 100":6.633560302,"Difference between 0 and 25":1.136312368,"Difference between 25 and 50":1.136312368,"Difference between 50 and 75":1.136312368,"Difference between 75 and 100":3.224623196,"Years it takes to pay loans (0%)":36.8799311,"Years it takes to pay loans (25%)":30.5624907,"Years it takes to pay loans (50%)":24.24505029,"Years it takes to pay loans (75%)":17.92760989,"__2":"","__3":""},{"Name of College":"Syracuse University","Annual Cost":"64,533","State":"NY","Type":"Private","Age (100% SL)":71.44571546,"Age (75% SL)":70.237037,"Age (50% SL)":69.02835853,"Age (25%) SL":67.81968007,"Age (0% SL)":64.98892672,"Cost":"51,853","Room and Board":"12,680","Total Cost for 4 years":258132,"Average Starting Salary":"56,200","Average Mid Salary":"105,400","Average Salary":"71,000","Average Starting and MID":80800,"":"","__1":"","Difference between 0 and 100":6.45678874,"Difference between 0 and 25":1.208678461,"Difference between 25 and 50":1.208678461,"Difference between 50 and 75":1.208678461,"Difference between 75 and 100":2.830753358,"Years it takes to pay loans (0%)":42.7364065,"Years it takes to pay loans (25%)":34.7363656,"Years it takes to pay loans (50%)":26.73632469,"Years it takes to pay loans (75%)":18.73628379,"__2":"","__3":""},{"Name of College":"University of Miami","Annual Cost":"62,906","State":"FL","Type":"Private","Age (100% SL)":71.55269474,"Age (75% SL)":70.36200861,"Age (50% SL)":69.17132247,"Age (25%) SL":67.98063634,"Age (0% SL)":65.30728837,"Cost":"50,226","Room and Board":"12,680","Total Cost for 4 years":251624,"Average Starting Salary":"57,000","Average Mid Salary":"101,500","Average Salary":"69,000","Average Starting and MID":79250,"":"","__1":"","Difference between 0 and 100":6.245406378,"Difference between 0 and 25":1.190686135,"Difference between 25 and 50":1.190686135,"Difference between 50 and 75":1.190686135,"Difference between 75 and 100":2.673347973,"Years it takes to pay loans (0%)":42.47568562,"Years it takes to pay loans (25%)":34.37770017,"Years it takes to pay loans (50%)":26.27971473,"Years it takes to pay loans (75%)":18.18172929,"__2":"","__3":""},{"Name of College":"Ohio State University-Columbus","Annual Cost":"41,882","State":"OH","Type":"Public","Age (100% SL)":70.26490366,"Age (75% SL)":69.46630361,"Age (50% SL)":68.66770356,"Age (25%) SL":67.86910351,"Age (0% SL)":65.60373951,"Cost":"30,742","Room and Board":"11,140","Total Cost for 4 years":167528,"Average Starting Salary":"55,100","Average Mid Salary":"98,800","Average Salary":"69,000","Average Starting and MID":76950,"":"","__1":"","Difference between 0 and 100":4.661164144,"Difference between 0 and 25":0.7986000474,"Difference between 25 and 50":0.7986000474,"Difference between 50 and 75":0.7986000474,"Difference between 75 and 100":2.265364002,"Years it takes to pay loans (0%)":32.32857014,"Years it takes to pay loans (25%)":26.78969684,"Years it takes to pay loans (50%)":21.25082353,"Years it takes to pay loans (75%)":15.71195023,"__2":"","__3":""},{"Name of College":"Purdue University--West Lafayette (Main Campus)","Annual Cost":"39,944","State":"IN","Type":"Public","Age (100% SL)":73.24431967,"Age (75% SL)":72.41183112,"Age (50% SL)":71.57934257,"Age (25%) SL":70.74685402,"Age (0% SL)":69.0302263,"Cost":"28,804","Room and Board":"11,140","Total Cost for 4 years":159776,"Average Starting Salary":"43,600","Average Mid Salary":"67,700","Average Salary":"75,000","Average Starting and MID":55650,"":"","__1":"","Difference between 0 and 100":4.214093367,"Difference between 0 and 25":0.8324885495,"Difference between 25 and 50":0.8324885495,"Difference between 50 and 75":0.8324885495,"Difference between 75 and 100":1.716627718,"Years it takes to pay loans (0%)":39.02471433,"Years it takes to pay loans (25%)":31.31543383,"Years it takes to pay loans (50%)":23.60615332,"Years it takes to pay loans (75%)":15.89687282,"__2":"","__3":""},{"Name of College":"Rutgers University--New Brunswick","Annual Cost":"42,422","State":"NJ","Type":"Public","Age (100% SL)":69.28559863,"Age (75% SL)":68.50407384,"Age (50% SL)":67.72254905,"Age (25%) SL":66.94102426,"Age (0% SL)":64.41483962,"Cost":"31,282","Room and Board":"11,140","Total Cost for 4 years":169688,"Average Starting Salary":"57,800","Average Mid Salary":"111,600","Average Salary":"70,000","Average Starting and MID":84700,"":"","__1":"","Difference between 0 and 100":4.870759013,"Difference between 0 and 25":0.7815247903,"Difference between 25 and 50":0.7815247903,"Difference between 50 and 75":0.7815247903,"Difference between 75 and 100":2.526184642,"Years it takes to pay loans (0%)":30.95507016,"Years it takes to pay loans (25%)":25.98825603,"Years it takes to pay loans (50%)":21.02144189,"Years it takes to pay loans (75%)":16.05462776,"__2":"","__3":""},{"Name of College":"Pennsylvania State University--University Park","Annual Cost":"45,998","State":"PA","Type":"Public","Age (100% SL)":73.66318714,"Age (75% SL)":72.70624198,"Age (50% SL)":71.74929682,"Age (25%) SL":70.79235166,"Age (0% SL)":68.94918897,"Cost":"34,858","Room and Board":"11,140","Total Cost for 4 years":183992,"Average Starting Salary":"44,100","Average Mid Salary":"68,300","Average Salary":"71,000","Average Starting and MID":56200,"":"","__1":"","Difference between 0 and 100":4.713998161,"Difference between 0 and 25":0.9569451567,"Difference between 25 and 50":0.9569451567,"Difference between 50 and 75":0.9569451567,"Difference between 75 and 100":1.843162691,"Years it takes to pay loans (0%)":43.34824993,"Years it takes to pay loans (25%)":34.54852273,"Years it takes to pay loans (50%)":25.74879553,"Years it takes to pay loans (75%)":16.94906834,"__2":"","__3":""},{"Name of College":"Southern Methodist University","Annual Cost":"67,173","State":"TX","Type":"Private","Age (100% SL)":70.61682015,"Age (75% SL)":69.39641628,"Age (50% SL)":68.17601241,"Age (25%) SL":66.95560853,"Age (0% SL)":63.9155123,"Cost":"54,493","Room and Board":"12,680","Total Cost for 4 years":268692,"Average Starting Salary":"60,000","Average Mid Salary":"116,900","Average Salary":"77,000","Average Starting and MID":88450,"":"","__1":"","Difference between 0 and 100":6.701307858,"Difference between 0 and 25":1.220403874,"Difference between 25 and 50":1.220403874,"Difference between 50 and 75":1.220403874,"Difference between 75 and 100":3.040096235,"Years it takes to pay loans (0%)":41.22751792,"Years it takes to pay loans (25%)":33.71939806,"Years it takes to pay loans (50%)":26.21127821,"Years it takes to pay loans (75%)":18.70315835,"__2":"","__3":""},{"Name of College":"University of Washington","Annual Cost":"48,038","State":"WA","Type":"Public","Age (100% SL)":69.55877199,"Age (75% SL)":68.67425338,"Age (50% SL)":67.78973477,"Age (25%) SL":66.90521616,"Age (0% SL)":64.33854148,"Cost":"36,898","Room and Board":"11,140","Total Cost for 4 years":192152,"Average Starting Salary":"59,900","Average Mid Salary":"111,800","Average Salary":"75,000","Average Starting and MID":85850,"":"","__1":"","Difference between 0 and 100":5.220230502,"Difference between 0 and 25":0.8845186084,"Difference between 25 and 50":0.8845186084,"Difference between 50 and 75":0.8845186084,"Difference between 75 and 100":2.566674677,"Years it takes to pay loans (0%)":33.13422245,"Years it takes to pay loans (25%)":27.51994233,"Years it takes to pay loans (50%)":21.90566221,"Years it takes to pay loans (75%)":16.29138209,"__2":"","__3":""},{"Name of College":"Worcester Polytechnic Institute","Annual Cost":"63,210","State":"MA","Type":"Private","Age (100% SL)":68.66477916,"Age (75% SL)":67.5612566,"Age (50% SL)":66.45773405,"Age (25%) SL":65.35421149,"Age (0% SL)":62.38226305,"Cost":"50,530","Room and Board":"12,680","Total Cost for 4 years":252840,"Average Starting Salary":"71,700","Average Mid Salary":"132,500","Average Salary":"81,000","Average Starting and MID":102100,"":"","__1":"","Difference between 0 and 100":6.282516109,"Difference between 0 and 25":1.103522555,"Difference between 25 and 50":1.103522555,"Difference between 50 and 75":1.103522555,"Difference between 75 and 100":2.971948443,"Years it takes to pay loans (0%)":35.48732566,"Years it takes to pay loans (25%)":29.25398481,"Years it takes to pay loans (50%)":23.02064396,"Years it takes to pay loans (75%)":16.78730311,"__2":"","__3":""},{"Name of College":"George Washington University","Annual Cost":"67,910","State":"DC","Type":"Private","Age (100% SL)":70.02018299,"Age (75% SL)":68.81651495,"Age (50% SL)":67.6128469,"Age (25%) SL":66.40917886,"Age (0% SL)":63.14321323,"Cost":"55,230","Room and Board":"12,680","Total Cost for 4 years":271640,"Average Starting Salary":"60,400","Average Mid Salary":"126,500","Average Salary":"75,000","Average Starting and MID":93450,"":"","__1":"","Difference between 0 and 100":6.876969767,"Difference between 0 and 25":1.203668046,"Difference between 25 and 50":1.203668046,"Difference between 50 and 75":1.203668046,"Difference between 75 and 100":3.26596563,"Years it takes to pay loans (0%)":40.076017,"Years it takes to pay loans (25%)":33.0615582,"Years it takes to pay loans (50%)":26.04709941,"Years it takes to pay loans (75%)":19.03264061,"__2":"","__3":""},{"Name of College":"University of Connecticut","Annual Cost":"49,238","State":"CT","Type":"Public","Age (100% SL)":74.1061679,"Age (75% SL)":73.07690119,"Age (50% SL)":72.04763449,"Age (25%) SL":71.01836779,"Age (0% SL)":69.13910609,"Cost":"38,098","Room and Board":"11,140","Total Cost for 4 years":196952,"Average Starting Salary":"43,600","Average Mid Salary":"66,700","Average Salary":"71,000","Average Starting and MID":55150,"":"","__1":"","Difference between 0 and 100":4.967061806,"Difference between 0 and 25":1.029266701,"Difference between 25 and 50":1.029266701,"Difference between 50 and 75":1.029266701,"Difference between 75 and 100":1.879261702,"Years it takes to pay loans (0%)":46.54758726,"Years it takes to pay loans (25%)":36.90206975,"Years it takes to pay loans (50%)":27.25655225,"Years it takes to pay loans (75%)":17.61103475,"__2":"","__3":""},{"Name of College":"University of Maryland--College Park","Annual Cost":"46,356","State":"MD","Type":"Public","Age (100% SL)":69.56511748,"Age (75% SL)":68.70680684,"Age (50% SL)":67.84849621,"Age (25%) SL":66.99018558,"Age (0% SL)":64.51203613,"Cost":"35,216","Room and Board":"11,140","Total Cost for 4 years":185424,"Average Starting Salary":"60,000","Average Mid Salary":"109,700","Average Salary":"75,000","Average Starting and MID":84850,"":"","__1":"","Difference between 0 and 100":5.053081343,"Difference between 0 and 25":0.8583106332,"Difference between 25 and 50":0.8583106332,"Difference between 50 and 75":0.8583106332,"Difference between 75 and 100":2.478149443,"Years it takes to pay loans (0%)":32.50589189,"Years it takes to pay loans (25%)":26.98447817,"Years it takes to pay loans (50%)":21.46306445,"Years it takes to pay loans (75%)":15.94165073,"__2":"","__3":""},{"Name of College":"Brigham Young University--Provo","Annual Cost":"18,300","State":"UT","Type":"Private","Age (100% SL)":67.03663271,"Age (75% SL)":66.70467627,"Age (50% SL)":66.37271983,"Age (25%) SL":66.04076338,"Age (0% SL)":63.86960521,"Cost":"5,620","Room and Board":"12,680","Total Cost for 4 years":73200,"Average Starting Salary":"59,900","Average Mid Salary":"117,500","Average Salary":"74,000","Average Starting and MID":88700,"":"","__1":"","Difference between 0 and 100":3.167027505,"Difference between 0 and 25":0.3319564425,"Difference between 25 and 50":0.3319564425,"Difference between 50 and 75":0.3319564425,"Difference between 75 and 100":2.171158178,"Years it takes to pay loans (0%)":19.41488936,"Years it takes to pay loans (25%)":17.37989043,"Years it takes to pay loans (50%)":15.34489149,"Years it takes to pay loans (75%)":13.30989255,"__2":"","__3":""},{"Name of College":"Clark University","Annual Cost":"58,410","State":"MA","Type":"Private","Age (100% SL)":70.74591027,"Age (75% SL)":69.67126497,"Age (50% SL)":68.59661966,"Age (25%) SL":67.52197436,"Age (0% SL)":64.52037314,"Cost":"45,730","Room and Board":"12,680","Total Cost for 4 years":233640,"Average Starting Salary":"52,600","Average Mid Salary":"112,100","Average Salary":"64,000","Average Starting and MID":82350,"":"","__1":"","Difference between 0 and 100":6.225537129,"Difference between 0 and 25":1.074645305,"Difference between 25 and 50":1.074645305,"Difference between 50 and 75":1.074645305,"Difference between 75 and 100":3.001601214,"Years it takes to pay loans (0%)":39.44066592,"Years it takes to pay loans (25%)":32.63246198,"Years it takes to pay loans (50%)":25.82425803,"Years it takes to pay loans (75%)":19.01605408,"__2":"","__3":""},{"Name of College":"Clemson University","Annual Cost":"47,864","State":"SC","Type":"Public","Age (100% SL)":70.27904265,"Age (75% SL)":69.37942493,"Age (50% SL)":68.47980722,"Age (25%) SL":67.5801895,"Age (0% SL)":65.09912793,"Cost":"36,724","Room and Board":"11,140","Total Cost for 4 years":191456,"Average Starting Salary":"56,300","Average Mid Salary":"104,100","Average Salary":"67,000","Average Starting and MID":80200,"":"","__1":"","Difference between 0 and 100":5.179914714,"Difference between 0 and 25":0.8996177146,"Difference between 25 and 50":0.8996177146,"Difference between 50 and 75":0.8996177146,"Difference between 75 and 100":2.48106157,"Years it takes to pay loans (0%)":34.5918536,"Years it takes to pay loans (25%)":28.58413996,"Years it takes to pay loans (50%)":22.57642632,"Years it takes to pay loans (75%)":16.56871268,"__2":"","__3":""},{"Name of College":"Texas A&M University--College Station","Annual Cost":"49,776","State":"TX","Type":"Public","Age (100% SL)":69.47631631,"Age (75% SL)":68.56961851,"Age (50% SL)":67.66292072,"Age (25%) SL":66.75622293,"Age (0% SL)":64.02507624,"Cost":"38,636","Room and Board":"11,140","Total Cost for 4 years":199104,"Average Starting Salary":"59,000","Average Mid Salary":"115,900","Average Salary":"73,000","Average Starting and MID":87450,"":"","__1":"","Difference between 0 and 100":5.451240066,"Difference between 0 and 25":0.9066977921,"Difference between 25 and 50":0.9066977921,"Difference between 50 and 75":0.9066977921,"Difference between 75 and 100":2.73114669,"Years it takes to pay loans (0%)":33.73807282,"Years it takes to pay loans (25%)":28.1264623,"Years it takes to pay loans (50%)":22.51485177,"Years it takes to pay loans (75%)":16.90324124,"__2":"","__3":""},{"Name of College":"Florida State University","Annual Cost":"32,813","State":"FL","Type":"Public","Age (100% SL)":69.99207545,"Age (75% SL)":69.36330498,"Age (50% SL)":68.73453452,"Age (25%) SL":68.10576405,"Age (0% SL)":65.90515124,"Cost":"21,673","Room and Board":"11,140","Total Cost for 4 years":131252,"Average Starting Salary":"50,400","Average Mid Salary":"97,000","Average Salary":"61,000","Average Starting and MID":73700,"":"","__1":"","Difference between 0 and 100":4.086924209,"Difference between 0 and 25":0.6287704656,"Difference between 25 and 50":0.6287704656,"Difference between 50 and 75":0.6287704656,"Difference between 75 and 100":2.200612812,"Years it takes to pay loans (0%)":28.72960253,"Years it takes to pay loans (25%)":24.30957303,"Years it takes to pay loans (50%)":19.88954353,"Years it takes to pay loans (75%)":15.46951403,"__2":"","__3":""},{"Name of College":"Fordham University","Annual Cost":"64,928","State":"NY","Type":"Private","Age (100% SL)":70.87189198,"Age (75% SL)":69.68297653,"Age (50% SL)":68.49406108,"Age (25%) SL":67.30514563,"Age (0% SL)":64.26285364,"Cost":"52,248","Room and Board":"12,680","Total Cost for 4 years":259712,"Average Starting Salary":"56,400","Average Mid Salary":"113,900","Average Salary":"67,000","Average Starting and MID":85150,"":"","__1":"","Difference between 0 and 100":6.609038339,"Difference between 0 and 25":1.188915449,"Difference between 25 and 50":1.188915449,"Difference between 50 and 75":1.188915449,"Difference between 75 and 100":3.042291993,"Years it takes to pay loans (0%)":41.40440667,"Years it takes to pay loans (25%)":33.95607059,"Years it takes to pay loans (50%)":26.5077345,"Years it takes to pay loans (75%)":19.05939842,"__2":"","__3":""},{"Name of College":"Stevens Institute of Technology","Annual Cost":"64,882","State":"NJ","Type":"Private","Age (100% SL)":68.3503232,"Age (75% SL)":67.23300599,"Age (50% SL)":66.11568878,"Age (25%) SL":64.99837157,"Age (0% SL)":61.92889621,"Cost":"52,202","Room and Board":"12,680","Total Cost for 4 years":259528,"Average Starting Salary":"73,600","Average Mid Salary":"138,000","Average Salary":"87,000","Average Starting and MID":105800,"":"","__1":"","Difference between 0 and 100":6.421426992,"Difference between 0 and 25":1.117317209,"Difference between 25 and 50":1.117317209,"Difference between 50 and 75":1.117317209,"Difference between 75 and 100":3.069475364,"Years it takes to pay loans (0%)":35.30621543,"Years it takes to pay loans (25%)":29.16299491,"Years it takes to pay loans (50%)":23.01977438,"Years it takes to pay loans (75%)":16.87655386,"__2":"","__3":""},{"Name of College":"University of California--Santa Cruz","Annual Cost":"54,643","State":"CA","Type":"Private","Age (100% SL)":70.75941678,"Age (75% SL)":69.73404513,"Age (50% SL)":68.70867347,"Age (25%) SL":67.68330182,"Age (0% SL)":65.05261646,"Cost":"41,963","Room and Board":"12,680","Total Cost for 4 years":218572,"Average Starting Salary":"56,100","Average Mid Salary":"104,700","Average Salary":"72,000","Average Starting and MID":80400,"":"","__1":"","Difference between 0 and 100":5.706800316,"Difference between 0 and 25":1.025371652,"Difference between 25 and 50":1.025371652,"Difference between 50 and 75":1.025371652,"Difference between 75 and 100":2.630685359,"Years it takes to pay loans (0%)":37.95335621,"Years it takes to pay loans (25%)":31.1340716,"Years it takes to pay loans (50%)":24.31478699,"Years it takes to pay loans (75%)":17.49550238,"__2":"","__3":""},{"Name of College":"University of Massachusetts--Amherst","Annual Cost":"45,710","State":"MA","Type":"Public","Age (100% SL)":70.29136803,"Age (75% SL)":69.42734157,"Age (50% SL)":68.56331512,"Age (25%) SL":67.69928866,"Age (0% SL)":65.29804702,"Cost":"34,570","Room and Board":"11,140","Total Cost for 4 years":182840,"Average Starting Salary":"55,800","Average Mid Salary":"102,000","Average Salary":"70,000","Average Starting and MID":78900,"":"","__1":"","Difference between 0 and 100":4.993321013,"Difference between 0 and 25":0.8640264557,"Difference between 25 and 50":0.8640264557,"Difference between 50 and 75":0.8640264557,"Difference between 75 and 100":2.401241646,"Years it takes to pay loans (0%)":33.83954069,"Years it takes to pay loans (25%)":27.98406728,"Years it takes to pay loans (50%)":22.12859387,"Years it takes to pay loans (75%)":16.27312047,"__2":"","__3":""},{"Name of College":"University of Pittsburgh","Annual Cost":"43,192","State":"PA","Type":"Public","Age (100% SL)":70.16299892,"Age (75% SL)":69.34434801,"Age (50% SL)":68.5256971,"Age (25%) SL":67.70704619,"Age (0% SL)":65.383699,"Cost":"32,052","Room and Board":"11,140","Total Cost for 4 years":172768,"Average Starting Salary":"55,900","Average Mid Salary":"101,000","Average Salary":"70,000","Average Starting and MID":78450,"":"","__1":"","Difference between 0 and 100":4.779299917,"Difference between 0 and 25":0.8186509084,"Difference between 25 and 50":0.8186509084,"Difference between 50 and 75":0.8186509084,"Difference between 75 and 100":2.323347191,"Years it takes to pay loans (0%)":32.62108792,"Years it takes to pay loans (25%)":27.0333902,"Years it takes to pay loans (50%)":21.44569248,"Years it takes to pay loans (75%)":15.85799475,"__2":"","__3":""},{"Name of College":"University of Minnesota--Twin Cities","Annual Cost":"41,511","State":"MN","Type":"Public","Age (100% SL)":70.00101001,"Age (75% SL)":69.21550226,"Age (50% SL)":68.42999451,"Age (25%) SL":67.64448675,"Age (0% SL)":65.33341781,"Cost":"30,371","Room and Board":"11,140","Total Cost for 4 years":166044,"Average Starting Salary":"55,800","Average Mid Salary":"101,600","Average Salary":"71,000","Average Starting and MID":78700,"":"","__1":"","Difference between 0 and 100":4.667592201,"Difference between 0 and 25":0.7855077534,"Difference between 25 and 50":0.7855077534,"Difference between 50 and 75":0.7855077534,"Difference between 75 and 100":2.311068941,"Years it takes to pay loans (0%)":31.72216944,"Years it takes to pay loans (25%)":26.38365464,"Years it takes to pay loans (50%)":21.04513984,"Years it takes to pay loans (75%)":15.70662504,"__2":"","__3":""},{"Name of College":"Virginia Tech","Annual Cost":"42,444","State":"VA","Type":"Public","Age (100% SL)":69.02252025,"Age (75% SL)":68.24306289,"Age (50% SL)":67.46360552,"Age (25%) SL":66.68414816,"Age (0% SL)":64.22696767,"Cost":"31,304","Room and Board":"11,140","Total Cost for 4 years":169776,"Average Starting Salary":"60,900","Average Mid Salary":"112,800","Average Salary":"73,000","Average Starting and MID":86850,"":"","__1":"","Difference between 0 and 100":4.795552579,"Difference between 0 and 25":0.7794573647,"Difference between 25 and 50":0.7794573647,"Difference between 50 and 75":0.7794573647,"Difference between 75 and 100":2.457180485,"Years it takes to pay loans (0%)":30.24854309,"Years it takes to pay loans (25%)":25.33201902,"Years it takes to pay loans (50%)":20.41549495,"Years it takes to pay loans (75%)":15.49897088,"__2":"","__3":""},{"Name of College":"American University","Annual Cost":"61,139","State":"DC","Type":"Private","Age (100% SL)":70.80782371,"Age (75% SL)":69.68267236,"Age (50% SL)":68.55752101,"Age (25%) SL":67.43236966,"Age (0% SL)":64.46073944,"Cost":"48,459","Room and Board":"12,680","Total Cost for 4 years":244556,"Average Starting Salary":"55,000","Average Mid Salary":"112,000","Average Salary":"64,000","Average Starting and MID":83500,"":"","__1":"","Difference between 0 and 100":6.347084275,"Difference between 0 and 25":1.12515135,"Difference between 25 and 50":1.12515135,"Difference between 50 and 75":1.12515135,"Difference between 75 and 100":2.971630224,"Years it takes to pay loans (0%)":40.23598067,"Years it takes to pay loans (25%)":33.10332479,"Years it takes to pay loans (50%)":25.97066891,"Years it takes to pay loans (75%)":18.83801302,"__2":"","__3":""},{"Name of College":"Baylor University","Annual Cost":"58,222","State":"TX","Type":"Private","Age (100% SL)":71.37023388,"Age (75% SL)":70.26910385,"Age (50% SL)":69.16797382,"Age (25%) SL":68.0668438,"Age (0% SL)":65.3710693,"Cost":"45,542","Room and Board":"12,680","Total Cost for 4 years":232888,"Average Starting Salary":"53,900","Average Mid Salary":"101,800","Average Salary":"65,000","Average Starting and MID":77850,"":"","__1":"","Difference between 0 and 100":5.999164581,"Difference between 0 and 25":1.101130027,"Difference between 25 and 50":1.101130027,"Difference between 50 and 75":1.101130027,"Difference between 75 and 100":2.6957745,"Years it takes to pay loans (0%)":40.71387849,"Years it takes to pay loans (25%)":33.24095896,"Years it takes to pay loans (50%)":25.76803944,"Years it takes to pay loans (75%)":18.29511992,"__2":"","__3":""},{"Name of College":"Binghamton University--SUNY","Annual Cost":"35,628","State":"NY","Type":"Public","Age (100% SL)":68.74316855,"Age (75% SL)":68.0861123,"Age (50% SL)":67.42905605,"Age (25%) SL":66.7719998,"Age (0% SL)":64.41713126,"Cost":"24,488","Room and Board":"11,140","Total Cost for 4 years":142512,"Average Starting Salary":"58,900","Average Mid Salary":"111,200","Average Salary":"73,000","Average Starting and MID":85050,"":"","__1":"","Difference between 0 and 100":4.32603729,"Difference between 0 and 25":0.6570562526,"Difference between 25 and 50":0.6570562526,"Difference between 50 and 75":0.6570562526,"Difference between 75 and 100":2.354868532,"Years it takes to pay loans (0%)":27.56292644,"Years it takes to pay loans (25%)":23.37655634,"Years it takes to pay loans (50%)":19.19018624,"Years it takes to pay loans (75%)":15.00381614,"__2":"","__3":""},{"Name of College":"Colorado School of Mines","Annual Cost":"49,724","State":"CO","Type":"Public","Age (100% SL)":67.20643713,"Age (75% SL)":66.35289419,"Age (50% SL)":65.49935125,"Age (25%) SL":64.64580831,"Age (0% SL)":61.82218573,"Cost":"38,584","Room and Board":"11,140","Total Cost for 4 years":198896,"Average Starting Salary":"74,100","Average Mid Salary":"139,300","Average Salary":"77,000","Average Starting and MID":106700,"":"","__1":"","Difference between 0 and 100":5.384251397,"Difference between 0 and 25":0.8535429378,"Difference between 25 and 50":0.8535429378,"Difference between 50 and 75":0.8535429378,"Difference between 75 and 100":2.823622583,"Years it takes to pay loans (0%)":29.42157114,"Years it takes to pay loans (25%)":24.75749207,"Years it takes to pay loans (50%)":20.09341299,"Years it takes to pay loans (75%)":15.42933392,"__2":"","__3":""},{"Name of College":"North Carolina State University--Raleigh","Annual Cost":"39,584","State":"NC","Type":"Publlic","Age (100% SL)":69.28527174,"Age (75% SL)":68.55137399,"Age (50% SL)":67.81747624,"Age (25%) SL":67.08357849,"Age (0% SL)":64.64283434,"Cost":"28,444","Room and Board":"11,140","Total Cost for 4 years":158336,"Average Starting Salary":"56,900","Average Mid Salary":"109,200","Average Salary":"72,000","Average Starting and MID":83050,"":"","__1":"","Difference between 0 and 100":4.642437403,"Difference between 0 and 25":0.733897751,"Difference between 25 and 50":0.733897751,"Difference between 50 and 75":0.733897751,"Difference between 75 and 100":2.44074415,"Years it takes to pay loans (0%)":29.96115165,"Years it takes to pay loans (25%)":25.22475568,"Years it takes to pay loans (50%)":20.48835971,"Years it takes to pay loans (75%)":15.75196374,"__2":"","__3":""},{"Name of College":"Stony Brook University--SUNY","Annual Cost":"38,074","State":"NY","Type":"Public","Age (100% SL)":69.11584086,"Age (75% SL)":68.41143817,"Age (50% SL)":67.70703548,"Age (25%) SL":67.00263278,"Age (0% SL)":64.57221239,"Cost":"26,934","Room and Board":"11,140","Total Cost for 4 years":152296,"Average Starting Salary":"57,000","Average Mid Salary":"110,000","Average Salary":"73,000","Average Starting and MID":83500,"":"","__1":"","Difference between 0 and 100":4.543628474,"Difference between 0 and 25":0.7044026938,"Difference between 25 and 50":0.7044026938,"Difference between 50 and 75":0.7044026938,"Difference between 75 and 100":2.430420393,"Years it takes to pay loans (0%)":29.17216009,"Years it takes to pay loans (25%)":24.64957461,"Years it takes to pay loans (50%)":20.12698914,"Years it takes to pay loans (75%)":15.60440366,"__2":"","__3":""},{"Name of College":"Texas Christian University","Annual Cost":"59,630","State":"TX","Type":"Private","Age (100% SL)":71.40299104,"Age (75% SL)":70.27277819,"Age (50% SL)":69.14256533,"Age (25%) SL":68.01235248,"Age (0% SL)":65.38077969,"Cost":"46,950","Room and Board":"12,680","Total Cost for 4 years":238520,"Average Starting Salary":"56,000","Average Mid Salary":"101,000","Average Salary":"63,000","Average Starting and MID":78500,"":"","__1":"","Difference between 0 and 100":6.022211351,"Difference between 0 and 25":1.130212856,"Difference between 25 and 50":1.130212856,"Difference between 50 and 75":1.130212856,"Difference between 75 and 100":2.631572783,"Years it takes to pay loans (0%)":41.10457376,"Years it takes to pay loans (25%)":33.39031151,"Years it takes to pay loans (50%)":25.67604926,"Years it takes to pay loans (75%)":17.961787,"__2":"","__3":""},{"Name of College":"Michigan State University","Annual Cost":"50,890","State":"MI","Type":"Public","Age (100% SL)":70.58788252,"Age (75% SL)":69.63113221,"Age (50% SL)":68.67438191,"Age (25%) SL":67.7176316,"Age (0% SL)":65.14260791,"Cost":"39,750","Room and Board":"11,140","Total Cost for 4 years":203560,"Average Starting Salary":"55,100","Average Mid Salary":"104,000","Average Salary":"69,000","Average Starting and MID":79550,"":"","__1":"","Difference between 0 and 100":5.445274604,"Difference between 0 and 25":0.9567503058,"Difference between 25 and 50":0.9567503058,"Difference between 50 and 75":0.9567503058,"Difference between 75 and 100":2.575023687,"Years it takes to pay loans (0%)":36.38909471,"Years it takes to pay loans (25%)":29.9954268,"Years it takes to pay loans (50%)":23.60175889,"Years it takes to pay loans (75%)":17.20809099,"__2":"","__3":""},{"Name of College":"University of California--Riverside","Annual Cost":"54,019","State":"CA","Type":"Public","Age (100% SL)":70.52645169,"Age (75% SL)":69.52519163,"Age (50% SL)":68.52393158,"Age (25%) SL":67.52267153,"Age (0% SL)":64.71713804,"Cost":"42,879","Room and Board":"11,140","Total Cost for 4 years":216076,"Average Starting Salary":"54,000","Average Mid Salary":"109,300","Average Salary":"69,000","Average Starting and MID":81650,"":"","__1":"","Difference between 0 and 100":5.809313641,"Difference between 0 and 25":1.001260053,"Difference between 25 and 50":1.001260053,"Difference between 50 and 75":1.001260053,"Difference between 75 and 100":2.805533482,"Years it takes to pay loans (0%)":37.46754835,"Years it takes to pay loans (25%)":31.00985614,"Years it takes to pay loans (50%)":24.55216393,"Years it takes to pay loans (75%)":18.09447172,"__2":"","__3":""},{"Name of College":"University of San Diego","Annual Cost":"62,038","State":"CA","Type":"Private","Age (100% SL)":70.48121245,"Age (75% SL)":69.34967657,"Age (50% SL)":68.21814069,"Age (25%) SL":67.08660481,"Age (0% SL)":64.10254755,"Cost":"49,358","Room and Board":"12,680","Total Cost for 4 years":248152,"Average Starting Salary":"57,700","Average Mid Salary":"115,400","Average Salary":"71,000","Average Starting and MID":86550,"":"","__1":"","Difference between 0 and 100":6.378664903,"Difference between 0 and 25":1.131535882,"Difference between 25 and 50":1.131535882,"Difference between 50 and 75":1.131535882,"Difference between 75 and 100":2.984057257,"Years it takes to pay loans (0%)":39.59719298,"Years it takes to pay loans (25%)":32.57289474,"Years it takes to pay loans (50%)":25.54859649,"Years it takes to pay loans (75%)":18.52429825,"__2":"","__3":""},{"Name of College":"Howard University","Annual Cost":"39,436","State":"DC","Type":"Private","Age (100% SL)":69.65161923,"Age (75% SL)":68.91040821,"Age (50% SL)":68.16919719,"Age (25%) SL":67.42798617,"Age (0% SL)":65.10202284,"Cost":"26,756","Room and Board":"12,680","Total Cost for 4 years":157744,"Average Starting Salary":"56,200","Average Mid Salary":"104,100","Average Salary":"69,000","Average Starting and MID":80150,"":"","__1":"","Difference between 0 and 100":4.549596389,"Difference between 0 and 25":0.7412110186,"Difference between 25 and 50":0.7412110186,"Difference between 50 and 75":0.7412110186,"Difference between 75 and 100":2.325963334,"Years it takes to pay loans (0%)":30.38254121,"Years it takes to pay loans (25%)":25.4326792,"Years it takes to pay loans (50%)":20.4828172,"Years it takes to pay loans (75%)":15.53295519,"__2":"","__3":""},{"Name of College":"Indiana University--Bloomington","Annual Cost":"46,596","State":"IN","Type":"Public","Age (100% SL)":74.02125656,"Age (75% SL)":73.04193016,"Age (50% SL)":72.06260375,"Age (25%) SL":71.08327735,"Age (0% SL)":69.32703328,"Cost":"35,456","Room and Board":"11,140","Total Cost for 4 years":186384,"Average Starting Salary":"43,900","Average Mid Salary":"64,900","Average Salary":"65,000","Average Starting and MID":54400,"":"","__1":"","Difference between 0 and 100":4.694223287,"Difference between 0 and 25":0.979326406,"Difference between 25 and 50":0.979326406,"Difference between 50 and 75":0.979326406,"Difference between 75 and 100":1.75624407,"Years it takes to pay loans (0%)":44.9667171,"Years it takes to pay loans (25%)":35.58559253,"Years it takes to pay loans (50%)":26.20446795,"Years it takes to pay loans (75%)":16.82334337,"__2":"","__3":""},{"Name of College":"Loyola University Chicago","Annual Cost":"56,728","State":"IL","Type":"Private","Age (100% SL)":71.48057407,"Age (75% SL)":70.40037044,"Age (50% SL)":69.32016681,"Age (25%) SL":68.23996317,"Age (0% SL)":65.61455506,"Cost":"44,048","Room and Board":"12,680","Total Cost for 4 years":226912,"Average Starting Salary":"53,200","Average Mid Salary":"99,300","Average Salary":"65,000","Average Starting and MID":76250,"":"","__1":"","Difference between 0 and 100":5.866019011,"Difference between 0 and 25":1.080203632,"Difference between 25 and 50":1.080203632,"Difference between 50 and 75":1.080203632,"Difference between 75 and 100":2.625408114,"Years it takes to pay loans (0%)":40.53563867,"Years it takes to pay loans (25%)":33.07116506,"Years it takes to pay loans (50%)":25.60669144,"Years it takes to pay loans (75%)":18.14221782,"__2":"","__3":""},{"Name of College":"Marquette University","Annual Cost":"54,550","State":"WI","Type":"Private","Age (100% SL)":70.14721247,"Age (75% SL)":69.14305442,"Age (50% SL)":68.13889636,"Age (25%) SL":67.13473831,"Age (0% SL)":64.38406269,"Cost":"41,870","Room and Board":"12,680","Total Cost for 4 years":218200,"Average Starting Salary":"58,000","Average Mid Salary":"111,900","Average Salary":"71,000","Average Starting and MID":84950,"":"","__1":"","Difference between 0 and 100":5.763149775,"Difference between 0 and 25":1.004158052,"Difference between 25 and 50":1.004158052,"Difference between 50 and 75":1.004158052,"Difference between 75 and 100":2.750675619,"Years it takes to pay loans (0%)":36.55724531,"Years it takes to pay loans (25%)":30.18759439,"Years it takes to pay loans (50%)":23.81794348,"Years it takes to pay loans (75%)":17.44829256,"__2":"","__3":""},{"Name of College":"University at Buffalo--SUNY","Annual Cost":"38,898","State":"NY","Type":"Public","Age (100% SL)":72.92523161,"Age (75% SL)":72.11984229,"Age (50% SL)":71.31445298,"Age (25%) SL":70.50906367,"Age (0% SL)":68.77064475,"Cost":"27,758","Room and Board":"11,140","Total Cost for 4 years":155592,"Average Starting Salary":"44,300","Average Mid Salary":"69,900","Average Salary":"66,000","Average Starting and MID":57100,"":"","__1":"","Difference between 0 and 100":4.154586859,"Difference between 0 and 25":0.8053893117,"Difference between 25 and 50":0.8053893117,"Difference between 50 and 75":0.8053893117,"Difference between 75 and 100":1.738418924,"Years it takes to pay loans (0%)":37.50792518,"Years it takes to pay loans (25%)":30.23680941,"Years it takes to pay loans (50%)":22.96569363,"Years it takes to pay loans (75%)":15.69457786,"__2":"","__3":""},{"Name of College":"University of Delaware","Annual Cost":"45,450","State":"DE","Type":"Public","Age (100% SL)":69.96500833,"Age (75% SL)":69.114433,"Age (50% SL)":68.26385767,"Age (25%) SL":67.41328234,"Age (0% SL)":64.94852744,"Cost":"34,310","Room and Board":"11,140","Total Cost for 4 years":181800,"Average Starting Salary":"56,700","Average Mid Salary":"105,700","Average Salary":"70,000","Average Starting and MID":81200,"":"","__1":"","Difference between 0 and 100":5.016480888,"Difference between 0 and 25":0.850575329,"Difference between 25 and 50":0.850575329,"Difference between 50 and 75":0.850575329,"Difference between 75 and 100":2.464754901,"Years it takes to pay loans (0%)":33.13570719,"Years it takes to pay loans (25%)":27.51734331,"Years it takes to pay loans (50%)":21.89897942,"Years it takes to pay loans (75%)":16.28061554,"__2":"","__3":0.499},{"Name of College":"University of Iowa","Annual Cost":"41,749","State":"IA","Type":"Public","Age (100% SL)":70.00028639,"Age (75% SL)":69.21517836,"Age (50% SL)":68.43007033,"Age (25%) SL":67.6449623,"Age (0% SL)":65.19480076,"Cost":"30,609","Room and Board":"11,140","Total Cost for 4 years":166996,"Average Starting Salary":"53,600","Average Mid Salary":"103,900","Average Salary":"67,000","Average Starting and MID":78750,"":"","__1":"","Difference between 0 and 100":4.805485631,"Difference between 0 and 25":0.7851080273,"Difference between 25 and 50":0.7851080273,"Difference between 50 and 75":0.7851080273,"Difference between 75 and 100":2.450161549,"Years it takes to pay loans (0%)":32.13581795,"Years it takes to pay loans (25%)":26.8855497,"Years it takes to pay loans (50%)":21.63528145,"Years it takes to pay loans (75%)":16.3850132,"__2":"","__3":0.423},{"Name of College":"Illinois Institute of Technology","Annual Cost":"60,326","State":"IL","Type":"Private","Age (100% SL)":69.51227169,"Age (75% SL)":68.4300893,"Age (50% SL)":67.34790691,"Age (25%) SL":66.26572452,"Age (0% SL)":63.38680281,"Cost":"47,646","Room and Board":"12,680","Total Cost for 4 years":241304,"Average Starting Salary":"64,900","Average Mid Salary":"121,800","Average Salary":"79,000","Average Starting and MID":93350,"":"","__1":"","Difference between 0 and 100":6.125468872,"Difference between 0 and 25":1.082182389,"Difference between 25 and 50":1.082182389,"Difference between 50 and 75":1.082182389,"Difference between 75 and 100":2.878921706,"Years it takes to pay loans (0%)":36.63085706,"Years it takes to pay loans (25%)":30.15930864,"Years it takes to pay loans (50%)":23.68776022,"Years it takes to pay loans (75%)":17.2162118,"__2":"","__3":""},{"Name of College":"Miami University--Oxford","Annual Cost":"44,717","State":"OH","Type":"Public","Age (100% SL)":69.83039616,"Age (75% SL)":68.99889781,"Age (50% SL)":68.16739945,"Age (25%) SL":67.3359011,"Age (0% SL)":64.77945388,"Cost":"33,577","Room and Board":"11,140","Total Cost for 4 years":178868,"Average Starting Salary":"55,400","Average Mid Salary":"108,100","Average Salary":"67,000","Average Starting and MID":81750,"":"","__1":"","Difference between 0 and 100":5.050942282,"Difference between 0 and 25":0.8314983563,"Difference between 25 and 50":0.8314983563,"Difference between 50 and 75":0.8314983563,"Difference between 75 and 100":2.556447213,"Years it takes to pay loans (0%)":32.83287701,"Years it takes to pay loans (25%)":27.42784925,"Years it takes to pay loans (50%)":22.02282148,"Years it takes to pay loans (75%)":16.61779372,"__2":"","__3":""},{"Name of College":"University of Colorado--Boulder","Annual Cost":"48,428","State":"CO","Type":"Public","Age (100% SL)":69.90501813,"Age (75% SL)":69.01261111,"Age (50% SL)":68.12020409,"Age (25%) SL":67.22779706,"Age (0% SL)":64.50268841,"Cost":"37,288","Room and Board":"11,140","Total Cost for 4 years":193712,"Average Starting Salary":"55,000","Average Mid Salary":"111,500","Average Salary":"75,000","Average Starting and MID":83250,"":"","__1":"","Difference between 0 and 100":5.402329724,"Difference between 0 and 25":0.8924070234,"Difference between 25 and 50":0.8924070234,"Difference between 50 and 75":0.8924070234,"Difference between 75 and 100":2.725108654,"Years it takes to pay loans (0%)":34.35506206,"Years it takes to pay loans (25%)":28.67997368,"Years it takes to pay loans (50%)":23.00488529,"Years it takes to pay loans (75%)":17.32979691,"__2":"","__3":""},{"Name of College":"University of Denver","Annual Cost":"63,236","State":"CO","Type":"Private","Age (100% SL)":71.34315498,"Age (75% SL)":70.16067571,"Age (50% SL)":68.97819645,"Age (25%) SL":67.79571719,"Age (0% SL)":64.95427549,"Cost":"50,556","Room and Board":"12,680","Total Cost for 4 years":252944,"Average Starting Salary":"55,600","Average Mid Salary":"106,000","Average Salary":"66,000","Average Starting and MID":80800,"":"","__1":"","Difference between 0 and 100":6.388879485,"Difference between 0 and 25":1.182479263,"Difference between 25 and 50":1.182479263,"Difference between 50 and 75":1.182479263,"Difference between 75 and 100":2.841441696,"Years it takes to pay loans (0%)":42.11537302,"Years it takes to pay loans (25%)":34.32049203,"Years it takes to pay loans (50%)":26.52561104,"Years it takes to pay loans (75%)":18.73073005,"__2":"","__3":""},{"Name of College":"University of San Francisco","Annual Cost":"60,746","State":"CA","Type":"Private","Age (100% SL)":70.6550835,"Age (75% SL)":69.53301611,"Age (50% SL)":68.41094871,"Age (25%) SL":67.28888132,"Age (0% SL)":64.47605584,"Cost":"48,066","Room and Board":"12,680","Total Cost for 4 years":242984,"Average Starting Salary":"58,600","Average Mid Salary":"110,600","Average Salary":"77,000","Average Starting and MID":84600,"":"","__1":"","Difference between 0 and 100":6.179027659,"Difference between 0 and 25":1.122067394,"Difference between 25 and 50":1.122067394,"Difference between 50 and 75":1.122067394,"Difference between 75 and 100":2.812825478,"Years it takes to pay loans (0%)":39.51979828,"Years it takes to pay loans (25%)":32.34328452,"Years it takes to pay loans (50%)":25.16677075,"Years it takes to pay loans (75%)":17.99025698,"__2":"","__3":""},{"Name of College":"University of Vermont","Annual Cost":"53,656","State":"VT","Type":"Public","Age (100% SL)":71.31837808,"Age (75% SL)":70.29778638,"Age (50% SL)":69.27719468,"Age (25%) SL":68.25660298,"Age (0% SL)":65.62552998,"Cost":"42,516","Room and Board":"11,140","Total Cost for 4 years":214624,"Average Starting Salary":"51,600","Average Mid Salary":"99,700","Average Salary":"65,000","Average Starting and MID":75650,"":"","__1":"","Difference between 0 and 100":5.692848098,"Difference between 0 and 25":1.020591699,"Difference between 25 and 50":1.020591699,"Difference between 50 and 75":1.020591699,"Difference between 75 and 100":2.631073002,"Years it takes to pay loans (0%)":39.22398034,"Years it takes to pay loans (25%)":32.19205747,"Years it takes to pay loans (50%)":25.1601346,"Years it takes to pay loans (75%)":18.12821174,"__2":"","__3":""}]
-
+const colleges = [
+ {
+   "Name of College": "Princeton University",
+   "Type": "Private",
+   "Annual Cost": "$59,820",
+   "Age (100% SL)": 67.86631888,
+   "Age (75% SL)": 66.84450589,
+   "Age (50% SL)": 65.8226929,
+   "Age (25%) SL": 64.80087991,
+   "Age (0% SL)": 63.77906692
+ },
+ {
+   "Name of College": "Harvard University",
+   "Type": "Private",
+   "Annual Cost": "$63,100",
+   "Age (100% SL)": 67.37884476,
+   "Age (75% SL)": 66.32754686,
+   "Age (50% SL)": 65.27624896,
+   "Age (25%) SL": 64.22495107,
+   "Age (0% SL)": 63.17365317
+ },
+ {
+   "Name of College": "Columbia University",
+   "Type": "Private",
+   "Annual Cost": "$72,110",
+   "Age (100% SL)": 69.19930773,
+   "Age (75% SL)": 67.94699699,
+   "Age (50% SL)": 66.69468626,
+   "Age (25%) SL": 65.44237553,
+   "Age (0% SL)": 64.19006479
+ },
+ {
+   "Name of College": "Massachusetts Institute of Technology",
+   "Type": "Private",
+   "Annual Cost": "$64,512",
+   "Age (100% SL)": 67.0798845,
+   "Age (75% SL)": 66.001969,
+   "Age (50% SL)": 64.9240535,
+   "Age (25%) SL": 63.84613801,
+   "Age (0% SL)": 62.76822251
+ },
+ {
+   "Name of College": "University of Chicago",
+   "Type": "Private",
+   "Annual Cost": "$69,686",
+   "Age (100% SL)": 70.16426305,
+   "Age (75% SL)": 68.91866155,
+   "Age (50% SL)": 67.67306005,
+   "Age (25%) SL": 66.42745855,
+   "Age (0% SL)": 65.18185705
+ },
+ {
+   "Name of College": "Yale University",
+   "Type": "Private",
+   "Annual Cost": "$66,110",
+   "Age (100% SL)": 68.03630853,
+   "Age (75% SL)": 66.92072563,
+   "Age (50% SL)": 65.80514272,
+   "Age (25%) SL": 64.68955982,
+   "Age (0% SL)": 63.57397692
+ },
+ {
+   "Name of College": "Stanford University",
+   "Type": "Private",
+   "Annual Cost": "$64,034",
+   "Age (100% SL)": 66.86652958,
+   "Age (75% SL)": 65.81252217,
+   "Age (50% SL)": 64.75851477,
+   "Age (25%) SL": 63.70450736,
+   "Age (0% SL)": 62.65049996
+ },
+ {
+   "Name of College": "Duke University",
+   "Type": "Private",
+   "Annual Cost": "$68,640",
+   "Age (100% SL)": 68.46723491,
+   "Age (75% SL)": 67.29905855,
+   "Age (50% SL)": 66.13088219,
+   "Age (25%) SL": 64.96270583,
+   "Age (0% SL)": 63.79452947
+ },
+ {
+   "Name of College": "University of Pennsylvania",
+   "Type": "Private",
+   "Annual Cost": "$68,264",
+   "Age (100% SL)": 68.21010743,
+   "Age (75% SL)": 67.05509999,
+   "Age (50% SL)": 65.90009256,
+   "Age (25%) SL": 64.74508513,
+   "Age (0% SL)": 63.5900777
+ },
+ {
+   "Name of College": "Johns Hopkins University",
+   "Type": "Private",
+   "Annual Cost": "$66,420",
+   "Age (100% SL)": 69.67203257,
+   "Age (75% SL)": 68.48419979,
+   "Age (50% SL)": 67.29636701,
+   "Age (25%) SL": 66.10853423,
+   "Age (0% SL)": 64.92070145
+ },
+ {
+   "Name of College": "Northwestern University",
+   "Type": "Private",
+   "Annual Cost": "$67,247",
+   "Age (100% SL)": 70.06597217,
+   "Age (75% SL)": 68.86087549,
+   "Age (50% SL)": 67.65577881,
+   "Age (25%) SL": 66.45068214,
+   "Age (0% SL)": 65.24558546
+ },
+ {
+   "Name of College": "California Institute of Technology",
+   "Type": "Private",
+   "Annual Cost": "$67,715",
+   "Age (100% SL)": 67.70235025,
+   "Age (75% SL)": 66.55076008,
+   "Age (50% SL)": 65.39916992,
+   "Age (25%) SL": 64.24757975,
+   "Age (0% SL)": 63.09598959
+ },
+ {
+   "Name of College": "Dartmouth",
+   "Type": "Private",
+   "Annual Cost": "$67,715",
+   "Age (100% SL)": 68.16088464,
+   "Age (75% SL)": 67.02152867,
+   "Age (50% SL)": 65.8821727,
+   "Age (25%) SL": 64.74281673,
+   "Age (0% SL)": 63.60346076
+ },
+ {
+   "Name of College": "Brown University",
+   "Type": "Private",
+   "Annual Cost": "$68,336",
+   "Age (100% SL)": 68.94063399,
+   "Age (75% SL)": 67.76383628,
+   "Age (50% SL)": 66.58703858,
+   "Age (25%) SL": 65.41024087,
+   "Age (0% SL)": 64.23344316
+ },
+ {
+   "Name of College": "Vanderbilt University",
+   "Type": "Private",
+   "Annual Cost": "$62,496",
+   "Age (100% SL)": 69.4201852,
+   "Age (75% SL)": 68.307667,
+   "Age (50% SL)": 67.1951488,
+   "Age (25%) SL": 66.0826306,
+   "Age (0% SL)": 64.9701124
+ },
+ {
+   "Name of College": "Cornell University",
+   "Type": "Private",
+   "Annual Cost": "$67,868",
+   "Age (100% SL)": 69.52348568,
+   "Age (75% SL)": 68.32239501,
+   "Age (50% SL)": 67.12130434,
+   "Age (25%) SL": 65.92021367,
+   "Age (0% SL)": 64.719123
+ },
+ {
+   "Name of College": "Rice University",
+   "Type": "Private",
+   "Annual Cost": "$60,030",
+   "Age (100% SL)": 68.52194264,
+   "Age (75% SL)": 67.47681674,
+   "Age (50% SL)": 66.43169084,
+   "Age (25%) SL": 65.38656494,
+   "Age (0% SL)": 64.34143904
+ },
+ {
+   "Name of College": "University of Notre Dame",
+   "Type": "Private",
+   "Annual Cost": "$66,071",
+   "Age (100% SL)": 68.83721537,
+   "Age (75% SL)": 67.69745109,
+   "Age (50% SL)": 66.55768682,
+   "Age (25%) SL": 65.41792254,
+   "Age (0% SL)": 64.27815826
+ },
+ {
+   "Name of College": "University of California--Los Angeles",
+   "Type": "Public",
+   "Annual Cost": "$52,434",
+   "Age (100% SL)": 68.97572363,
+   "Age (75% SL)": 68.04065138,
+   "Age (50% SL)": 67.10557912,
+   "Age (25%) SL": 66.17050687,
+   "Age (0% SL)": 65.23543462
+ },
+ {
+   "Name of College": "Washington University in St. Louis",
+   "Type": "Private",
+   "Annual Cost": "$66,079",
+   "Age (100% SL)": 70.02379089,
+   "Age (75% SL)": 68.83257974,
+   "Age (50% SL)": 67.64136858,
+   "Age (25%) SL": 66.45015743,
+   "Age (0% SL)": 65.25894628
+ },
+ {
+   "Name of College": "Emory University",
+   "Type": "Private",
+   "Annual Cost": "$63,986",
+   "Age (100% SL)": 69.95453124,
+   "Age (75% SL)": 68.80550932,
+   "Age (50% SL)": 67.6564874,
+   "Age (25%) SL": 66.50746548,
+   "Age (0% SL)": 65.35844357
+ },
+ {
+   "Name of College": "Georgetown University",
+   "Type": "Private",
+   "Annual Cost": "$66,784",
+   "Age (100% SL)": 68.81266001,
+   "Age (75% SL)": 67.66824501,
+   "Age (50% SL)": 66.52383001,
+   "Age (25%) SL": 65.379415,
+   "Age (0% SL)": 64.235
+ },
+ {
+   "Name of College": "University of California- Berkley",
+   "Type": "Public",
+   "Annual Cost": "$54,372",
+   "Age (100% SL)": 67.71876107,
+   "Age (75% SL)": 66.78726796,
+   "Age (50% SL)": 65.85577486,
+   "Age (25%) SL": 64.92428176,
+   "Age (0% SL)": 63.99278866
+ },
+ {
+   "Name of College": "University of Southern California",
+   "Type": "Private",
+   "Annual Cost": "$68,905",
+   "Age (100% SL)": 70.24756955,
+   "Age (75% SL)": 69.01402962,
+   "Age (50% SL)": 67.78048969,
+   "Age (25%) SL": 66.54694976,
+   "Age (0% SL)": 65.31340983
+ },
+ {
+   "Name of College": "Carnegie Mellon University",
+   "Type": "Private",
+   "Annual Cost": "$68,145",
+   "Age (100% SL)": 68.56609933,
+   "Age (75% SL)": 67.38764009,
+   "Age (50% SL)": 66.20918086,
+   "Age (25%) SL": 65.03072162,
+   "Age (0% SL)": 63.85226239
+ },
+ {
+   "Name of College": "University of Virginia",
+   "Type": "Public",
+   "Annual Cost": "$60,031",
+   "Age (100% SL)": 69.33177261,
+   "Age (75% SL)": 68.26395325,
+   "Age (50% SL)": 67.1961339,
+   "Age (25%) SL": 66.12831455,
+   "Age (0% SL)": 65.06049519
+ },
+ {
+   "Name of College": "Tufts University",
+   "Type": "Private",
+   "Annual Cost": "$69,062",
+   "Age (100% SL)": 69.6380798,
+   "Age (75% SL)": 68.42387563,
+   "Age (50% SL)": 67.20967147,
+   "Age (25%) SL": 65.9954673,
+   "Age (0% SL)": 64.78126314
+ },
+ {
+   "Name of College": "University of Michigan -Ann Arbor",
+   "Type": "Public",
+   "Annual Cost": "$60,490",
+   "Age (100% SL)": 70.01415482,
+   "Age (75% SL)": 68.91027568,
+   "Age (50% SL)": 67.80639654,
+   "Age (25%) SL": 66.70251741,
+   "Age (0% SL)": 65.59863827
+ },
+ {
+   "Name of College": "Wake Forest University",
+   "Type": "Private",
+   "Annual Cost": "$66,002",
+   "Age (100% SL)": 70.52651951,
+   "Age (75% SL)": 69.33268164,
+   "Age (50% SL)": 68.13884377,
+   "Age (25%) SL": 66.94500589,
+   "Age (0% SL)": 65.75116802
+ },
+ {
+   "Name of College": "New York University",
+   "Type": "Private",
+   "Annual Cost": "$64,508",
+   "Age (100% SL)": 73.99542854,
+   "Age (75% SL)": 72.67894645,
+   "Age (50% SL)": 71.36246437,
+   "Age (25%) SL": 70.04598228,
+   "Age (0% SL)": 68.7295002
+ },
+ {
+   "Name of College": "University of California- Santa Barbara",
+   "Type": "Public",
+   "Annual Cost": "$53,626",
+   "Age (100% SL)": 69.50040414,
+   "Age (75% SL)": 68.53766893,
+   "Age (50% SL)": 67.57493372,
+   "Age (25%) SL": 66.6121985,
+   "Age (0% SL)": 65.64946329
+ },
+ {
+   "Name of College": "University of North Carolina- Chapel Hill",
+   "Type": "Public",
+   "Annual Cost": "$46,309",
+   "Age (100% SL)": 70.36785155,
+   "Age (75% SL)": 69.49250259,
+   "Age (50% SL)": 68.61715362,
+   "Age (25%) SL": 67.74180466,
+   "Age (0% SL)": 66.8664557
+ },
+ {
+   "Name of College": "University of Calfornia -Irvine",
+   "Type": "Public",
+   "Annual Cost": "$54,670",
+   "Age (100% SL)": 69.5327133,
+   "Age (75% SL)": 68.55199336,
+   "Age (50% SL)": 67.57127342,
+   "Age (25%) SL": 66.59055348,
+   "Age (0% SL)": 65.60983353
+ },
+ {
+   "Name of College": "University of Rochester",
+   "Type": "Private",
+   "Annual Cost": "$66,606",
+   "Age (100% SL)": 70.19013928,
+   "Age (75% SL)": 68.99406898,
+   "Age (50% SL)": 67.79799869,
+   "Age (25%) SL": 66.60192839,
+   "Age (0% SL)": 65.4058581
+ },
+ {
+   "Name of College": "Brandeis University",
+   "Type": "Private",
+   "Annual Cost": "$68,075",
+   "Age (100% SL)": 70.70178653,
+   "Age (75% SL)": 69.46981289,
+   "Age (50% SL)": 68.23783925,
+   "Age (25%) SL": 67.00586561,
+   "Age (0% SL)": 65.77389197
+ },
+ {
+   "Name of College": "Georgia Institute of Technology",
+   "Type": "Public",
+   "Annual Cost": "$44,160",
+   "Age (100% SL)": 67.42003499,
+   "Age (75% SL)": 66.64792747,
+   "Age (50% SL)": 65.87581995,
+   "Age (25%) SL": 65.10371244,
+   "Age (0% SL)": 64.33160492
+ },
+ {
+   "Name of College": "University of Florida",
+   "Type": "Public",
+   "Annual Cost": "$39,798",
+   "Age (100% SL)": 69.52709621,
+   "Age (75% SL)": 68.78349358,
+   "Age (50% SL)": 68.03989094,
+   "Age (25%) SL": 67.29628831,
+   "Age (0% SL)": 66.55268567
+ },
+ {
+   "Name of College": "Boston College",
+   "Type": "Private",
+   "Annual Cost": "$68,144",
+   "Age (100% SL)": 70.5381787,
+   "Age (75% SL)": 69.30271043,
+   "Age (50% SL)": 68.06724215,
+   "Age (25%) SL": 66.83177388,
+   "Age (0% SL)": 65.59630561
+ },
+ {
+   "Name of College": "Colleges of William and Mary",
+   "Type": "Public",
+   "Annual Cost": "$55,841",
+   "Age (100% SL)": 69.6026901,
+   "Age (75% SL)": 68.59863751,
+   "Age (50% SL)": 67.59458492,
+   "Age (25%) SL": 66.59053234,
+   "Age (0% SL)": 65.58647975
+ },
+ {
+   "Name of College": "University of California -Davis",
+   "Type": "Public",
+   "Annual Cost": "$54,598",
+   "Age (100% SL)": 69.94051441,
+   "Age (75% SL)": 68.94049182,
+   "Age (50% SL)": 67.94046923,
+   "Age (25%) SL": 66.94044663,
+   "Age (0% SL)": 65.94042404
+ },
+ {
+   "Name of College": "University of California -- San Diego",
+   "Type": "Public",
+   "Annual Cost": "$53,214",
+   "Age (100% SL)": 68.41534089,
+   "Age (75% SL)": 67.48818706,
+   "Age (50% SL)": 66.56103323,
+   "Age (25%) SL": 65.63387939,
+   "Age (0% SL)": 64.70672556
+ },
+ {
+   "Name of College": "Boston University",
+   "Type": "Private",
+   "Annual Cost": "$66,628",
+   "Age (100% SL)": 70.72365083,
+   "Age (75% SL)": 69.50934958,
+   "Age (50% SL)": 68.29504833,
+   "Age (25%) SL": 67.08074707,
+   "Age (0% SL)": 65.86644582
+ },
+ {
+   "Name of College": "Case Western Reserve University",
+   "Type": "Private",
+   "Annual Cost": "$61,722",
+   "Age (100% SL)": 70.11787325,
+   "Age (75% SL)": 68.98736674,
+   "Age (50% SL)": 67.85686023,
+   "Age (25%) SL": 66.72635372,
+   "Age (0% SL)": 65.59584721
+ },
+ {
+   "Name of College": "Northeastern University",
+   "Type": "Private",
+   "Annual Cost": "$64,067",
+   "Age (100% SL)": 71.06668946,
+   "Age (75% SL)": 69.86834938,
+   "Age (50% SL)": 68.67000931,
+   "Age (25%) SL": 67.47166923,
+   "Age (0% SL)": 66.27332916
+ },
+ {
+   "Name of College": "Tulane University",
+   "Type": "Private",
+   "Annual Cost": "$67,500",
+   "Age (100% SL)": 70.91582621,
+   "Age (75% SL)": 69.68466672,
+   "Age (50% SL)": 68.45350724,
+   "Age (25%) SL": 67.22234776,
+   "Age (0% SL)": 65.99118827
+ },
+ {
+   "Name of College": "Pepperdine University",
+   "Type": "Private",
+   "Annual Cost": "$66,612",
+   "Age (100% SL)": 71.63205482,
+   "Age (75% SL)": 70.3824223,
+   "Age (50% SL)": 69.13278979,
+   "Age (25%) SL": 67.88315728,
+   "Age (0% SL)": 66.63352477
+ },
+ {
+   "Name of College": "University of Georgia",
+   "Type": "Public",
+   "Annual Cost": "$41,544",
+   "Age (100% SL)": 70.31334132,
+   "Age (75% SL)": 69.52377872,
+   "Age (50% SL)": 68.73421612,
+   "Age (25%) SL": 67.94465351,
+   "Age (0% SL)": 67.15509091
+ },
+ {
+   "Name of College": "University of Illinois -- Urbana-Champaign",
+   "Type": "Public",
+   "Annual Cost": "$43,708",
+   "Age (100% SL)": 69.04594164,
+   "Age (75% SL)": 68.24538141,
+   "Age (50% SL)": 67.44482118,
+   "Age (25%) SL": 66.64426095,
+   "Age (0% SL)": 65.84370072
+ },
+ {
+   "Name of College": "Rensselaer Polytechnic Institute",
+   "Type": "Private",
+   "Annual Cost": "$66,560",
+   "Age (100% SL)": 69.05667345,
+   "Age (75% SL)": 67.89204058,
+   "Age (50% SL)": 66.7274077,
+   "Age (25%) SL": 65.56277482,
+   "Age (0% SL)": 64.39814195
+ },
+ {
+   "Name of College": "University of Texas -- Austin",
+   "Type": "Public",
+   "Annual Cost": "$48,620",
+   "Age (100% SL)": 69.67633476,
+   "Age (75% SL)": 68.78015267,
+   "Age (50% SL)": 67.88397059,
+   "Age (25%) SL": 66.9877885,
+   "Age (0% SL)": 66.09160642
+ },
+ {
+   "Name of College": "University of Wisconsin -- Madison",
+   "Type": "Public",
+   "Annual Cost": "$47,945",
+   "Age (100% SL)": 70.48041675,
+   "Age (75% SL)": 69.57365163,
+   "Age (50% SL)": 68.6668865,
+   "Age (25%) SL": 67.76012138,
+   "Age (0% SL)": 66.85335625
+ },
+ {
+   "Name of College": "Villanova University",
+   "Type": "Private",
+   "Annual Cost": "$66,138",
+   "Age (100% SL)": 74.13297993,
+   "Age (75% SL)": 72.78520624,
+   "Age (50% SL)": 71.43743255,
+   "Age (25%) SL": 70.08965886,
+   "Age (0% SL)": 68.74188517
+ },
+ {
+   "Name of College": "Lehigh University",
+   "Type": "Private",
+   "Annual Cost": "$65,610",
+   "Age (100% SL)": 68.9000668,
+   "Age (75% SL)": 67.76375444,
+   "Age (50% SL)": 66.62744207,
+   "Age (25%) SL": 65.4911297,
+   "Age (0% SL)": 64.35481733
+ },
+ {
+   "Name of College": "Syracuse University",
+   "Type": "Private",
+   "Annual Cost": "$64,533",
+   "Age (100% SL)": 71.44571546,
+   "Age (75% SL)": 70.237037,
+   "Age (50% SL)": 69.02835853,
+   "Age (25%) SL": 67.81968007,
+   "Age (0% SL)": 66.61100161
+ },
+ {
+   "Name of College": "University of Miami",
+   "Type": "Private",
+   "Annual Cost": "$62,906",
+   "Age (100% SL)": 71.55269474,
+   "Age (75% SL)": 70.36200861,
+   "Age (50% SL)": 69.17132247,
+   "Age (25%) SL": 67.98063634,
+   "Age (0% SL)": 66.7899502
+ },
+ {
+   "Name of College": "Ohio State University-Columbus",
+   "Type": "Public",
+   "Annual Cost": "$41,882",
+   "Age (100% SL)": 70.26490366,
+   "Age (75% SL)": 69.46630361,
+   "Age (50% SL)": 68.66770356,
+   "Age (25%) SL": 67.86910351,
+   "Age (0% SL)": 67.07050347
+ },
+ {
+   "Name of College": "Purdue University--West Lafayette (Main Campus)",
+   "Type": "Public",
+   "Annual Cost": "$39,944",
+   "Age (100% SL)": 73.24431967,
+   "Age (75% SL)": 72.41183112,
+   "Age (50% SL)": 71.57934257,
+   "Age (25%) SL": 70.74685402,
+   "Age (0% SL)": 69.91436547
+ },
+ {
+   "Name of College": "Rutgers University--New Brunswick",
+   "Type": "Public",
+   "Annual Cost": "$42,422",
+   "Age (100% SL)": 69.28559863,
+   "Age (75% SL)": 68.50407384,
+   "Age (50% SL)": 67.72254905,
+   "Age (25%) SL": 66.94102426,
+   "Age (0% SL)": 66.15949947
+ },
+ {
+   "Name of College": "Pennsylvania State University--University Park",
+   "Type": "Public",
+   "Annual Cost": "$45,998",
+   "Age (100% SL)": 73.66318714,
+   "Age (75% SL)": 72.70624198,
+   "Age (50% SL)": 71.74929682,
+   "Age (25%) SL": 70.79235166,
+   "Age (0% SL)": 69.83540651
+ },
+ {
+   "Name of College": "Southern Methodist University",
+   "Type": "Private",
+   "Annual Cost": "$67,173",
+   "Age (100% SL)": 70.61682015,
+   "Age (75% SL)": 69.39641628,
+   "Age (50% SL)": 68.17601241,
+   "Age (25%) SL": 66.95560853,
+   "Age (0% SL)": 65.73520466
+ },
+ {
+   "Name of College": "University of Washington",
+   "Type": "Public",
+   "Annual Cost": "$48,038",
+   "Age (100% SL)": 69.55877199,
+   "Age (75% SL)": 68.67425338,
+   "Age (50% SL)": 67.78973477,
+   "Age (25%) SL": 66.90521616,
+   "Age (0% SL)": 66.02069755
+ },
+ {
+   "Name of College": "Worcester Polytechnic Institute",
+   "Type": "Private",
+   "Annual Cost": "$63,210",
+   "Age (100% SL)": 68.66477916,
+   "Age (75% SL)": 67.5612566,
+   "Age (50% SL)": 66.45773405,
+   "Age (25%) SL": 65.35421149,
+   "Age (0% SL)": 64.25068894
+ },
+ {
+   "Name of College": "George Washington University",
+   "Type": "Private",
+   "Annual Cost": "$67,910",
+   "Age (100% SL)": 70.02018299,
+   "Age (75% SL)": 68.81651495,
+   "Age (50% SL)": 67.6128469,
+   "Age (25%) SL": 66.40917886,
+   "Age (0% SL)": 65.20551081
+ },
+ {
+   "Name of College": "University of Connecticut",
+   "Type": "Public",
+   "Annual Cost": "$49,238",
+   "Age (100% SL)": 74.1061679,
+   "Age (75% SL)": 73.07690119,
+   "Age (50% SL)": 72.04763449,
+   "Age (25%) SL": 71.01836779,
+   "Age (0% SL)": 69.98910109
+ },
+ {
+   "Name of College": "University of Maryland--College Park",
+   "Type": "Public",
+   "Annual Cost": "$46,356",
+   "Age (100% SL)": 69.56511748,
+   "Age (75% SL)": 68.70680684,
+   "Age (50% SL)": 67.84849621,
+   "Age (25%) SL": 66.99018558,
+   "Age (0% SL)": 66.13187494
+ },
+ {
+   "Name of College": "Brigham Young University--Provo",
+   "Type": "Private",
+   "Annual Cost": "$18,300",
+   "Age (100% SL)": 67.03663271,
+   "Age (75% SL)": 66.70467627,
+   "Age (50% SL)": 66.37271983,
+   "Age (25%) SL": 66.04076338,
+   "Age (0% SL)": 65.70880694
+ },
+ {
+   "Name of College": "Clark University",
+   "Type": "Private",
+   "Annual Cost": "$58,410",
+   "Age (100% SL)": 70.74591027,
+   "Age (75% SL)": 69.67126497,
+   "Age (50% SL)": 68.59661966,
+   "Age (25%) SL": 67.52197436,
+   "Age (0% SL)": 66.44732905
+ },
+ {
+   "Name of College": "Clemson University",
+   "Type": "Public",
+   "Annual Cost": "$47,864",
+   "Age (100% SL)": 70.27904265,
+   "Age (75% SL)": 69.37942493,
+   "Age (50% SL)": 68.47980722,
+   "Age (25%) SL": 67.5801895,
+   "Age (0% SL)": 66.68057179
+ },
+ {
+   "Name of College": "Texas A&M University--College Station",
+   "Type": "Public",
+   "Annual Cost": "$49,776",
+   "Age (100% SL)": 69.47631631,
+   "Age (75% SL)": 68.56961851,
+   "Age (50% SL)": 67.66292072,
+   "Age (25%) SL": 66.75622293,
+   "Age (0% SL)": 65.84952514
+ },
+ {
+   "Name of College": "Florida State University",
+   "Type": "Public",
+   "Annual Cost": "$32,813",
+   "Age (100% SL)": 69.99207545,
+   "Age (75% SL)": 69.36330498,
+   "Age (50% SL)": 68.73453452,
+   "Age (25%) SL": 68.10576405,
+   "Age (0% SL)": 67.47699358
+ },
+ {
+   "Name of College": "Fordham University",
+   "Type": "Private",
+   "Annual Cost": "$64,928",
+   "Age (100% SL)": 70.87189198,
+   "Age (75% SL)": 69.68297653,
+   "Age (50% SL)": 68.49406108,
+   "Age (25%) SL": 67.30514563,
+   "Age (0% SL)": 66.11623018
+ },
+ {
+   "Name of College": "Stevens Institute of Technology",
+   "Type": "Private",
+   "Annual Cost": "$64,882",
+   "Age (100% SL)": 68.3503232,
+   "Age (75% SL)": 67.23300599,
+   "Age (50% SL)": 66.11568878,
+   "Age (25%) SL": 64.99837157,
+   "Age (0% SL)": 63.88105437
+ },
+ {
+   "Name of College": "University of California--Santa Cruz",
+   "Type": "Private",
+   "Annual Cost": "$54,643",
+   "Age (100% SL)": 70.75941678,
+   "Age (75% SL)": 69.73404513,
+   "Age (50% SL)": 68.70867347,
+   "Age (25%) SL": 67.68330182,
+   "Age (0% SL)": 66.65793017
+ },
+ {
+   "Name of College": "University of Massachusetts--Amherst",
+   "Type": "Public",
+   "Annual Cost": "$45,710",
+   "Age (100% SL)": 70.29136803,
+   "Age (75% SL)": 69.42734157,
+   "Age (50% SL)": 68.56331512,
+   "Age (25%) SL": 67.69928866,
+   "Age (0% SL)": 66.83526221
+ },
+ {
+   "Name of College": "University of Pittsburgh",
+   "Type": "Public",
+   "Annual Cost": "$43,192",
+   "Age (100% SL)": 70.16299892,
+   "Age (75% SL)": 69.34434801,
+   "Age (50% SL)": 68.5256971,
+   "Age (25%) SL": 67.70704619,
+   "Age (0% SL)": 66.88839529
+ },
+ {
+   "Name of College": "University of Minnesota--Twin Cities",
+   "Type": "Public",
+   "Annual Cost": "$41,511",
+   "Age (100% SL)": 70.00101001,
+   "Age (75% SL)": 69.21550226,
+   "Age (50% SL)": 68.42999451,
+   "Age (25%) SL": 67.64448675,
+   "Age (0% SL)": 66.858979
+ },
+ {
+   "Name of College": "Virginia Tech",
+   "Type": "Public",
+   "Annual Cost": "$42,444",
+   "Age (100% SL)": 69.02252025,
+   "Age (75% SL)": 68.24306289,
+   "Age (50% SL)": 67.46360552,
+   "Age (25%) SL": 66.68414816,
+   "Age (0% SL)": 65.90469079
+ },
+ {
+   "Name of College": "American University",
+   "Type": "Private",
+   "Annual Cost": "$61,139",
+   "Age (100% SL)": 70.80782371,
+   "Age (75% SL)": 69.68267236,
+   "Age (50% SL)": 68.55752101,
+   "Age (25%) SL": 67.43236966,
+   "Age (0% SL)": 66.30721831
+ },
+ {
+   "Name of College": "Baylor University",
+   "Type": "Private",
+   "Annual Cost": "$58,222",
+   "Age (100% SL)": 71.37023388,
+   "Age (75% SL)": 70.26910385,
+   "Age (50% SL)": 69.16797382,
+   "Age (25%) SL": 68.0668438,
+   "Age (0% SL)": 66.96571377
+ },
+ {
+   "Name of College": "Binghamton University--SUNY",
+   "Type": "Public",
+   "Annual Cost": "$35,628",
+   "Age (100% SL)": 68.74316855,
+   "Age (75% SL)": 68.0861123,
+   "Age (50% SL)": 67.42905605,
+   "Age (25%) SL": 66.7719998,
+   "Age (0% SL)": 66.11494354
+ },
+ {
+   "Name of College": "Colorado School of Mines",
+   "Type": "Public",
+   "Annual Cost": "$49,724",
+   "Age (100% SL)": 67.20643713,
+   "Age (75% SL)": 66.35289419,
+   "Age (50% SL)": 65.49935125,
+   "Age (25%) SL": 64.64580831,
+   "Age (0% SL)": 63.79226537
+ },
+ {
+   "Name of College": "North Carolina State University--Raleigh",
+   "Type": "Publlic",
+   "Annual Cost": "$39,584",
+   "Age (100% SL)": 69.28527174,
+   "Age (75% SL)": 68.55137399,
+   "Age (50% SL)": 67.81747624,
+   "Age (25%) SL": 67.08357849,
+   "Age (0% SL)": 66.34968074
+ },
+ {
+   "Name of College": "Stony Brook University--SUNY",
+   "Type": "Public",
+   "Annual Cost": "$38,074",
+   "Age (100% SL)": 69.11584086,
+   "Age (75% SL)": 68.41143817,
+   "Age (50% SL)": 67.70703548,
+   "Age (25%) SL": 67.00263278,
+   "Age (0% SL)": 66.29823009
+ },
+ {
+   "Name of College": "Texas Christian University",
+   "Type": "Private",
+   "Annual Cost": "$59,630",
+   "Age (100% SL)": 71.40299104,
+   "Age (75% SL)": 70.27277819,
+   "Age (50% SL)": 69.14256533,
+   "Age (25%) SL": 68.01235248,
+   "Age (0% SL)": 66.88213962
+ },
+ {
+   "Name of College": "Michigan State University",
+   "Type": "Public",
+   "Annual Cost": "$50,890",
+   "Age (100% SL)": 70.58788252,
+   "Age (75% SL)": 69.63113221,
+   "Age (50% SL)": 68.67438191,
+   "Age (25%) SL": 67.7176316,
+   "Age (0% SL)": 66.76088129
+ },
+ {
+   "Name of College": "University of California--Riverside",
+   "Type": "Public",
+   "Annual Cost": "$54,019",
+   "Age (100% SL)": 70.52645169,
+   "Age (75% SL)": 69.52519163,
+   "Age (50% SL)": 68.52393158,
+   "Age (25%) SL": 67.52267153,
+   "Age (0% SL)": 66.52141147
+ },
+ {
+   "Name of College": "University of San Diego",
+   "Type": "Private",
+   "Annual Cost": "$62,038",
+   "Age (100% SL)": 70.48121245,
+   "Age (75% SL)": 69.34967657,
+   "Age (50% SL)": 68.21814069,
+   "Age (25%) SL": 67.08660481,
+   "Age (0% SL)": 65.95506892
+ },
+ {
+   "Name of College": "Howard University",
+   "Type": "Private",
+   "Annual Cost": "$39,436",
+   "Age (100% SL)": 69.65161923,
+   "Age (75% SL)": 68.91040821,
+   "Age (50% SL)": 68.16919719,
+   "Age (25%) SL": 67.42798617,
+   "Age (0% SL)": 66.68677515
+ },
+ {
+   "Name of College": "Indiana University--Bloomington",
+   "Type": "Public",
+   "Annual Cost": "$46,596",
+   "Age (100% SL)": 74.02125656,
+   "Age (75% SL)": 73.04193016,
+   "Age (50% SL)": 72.06260375,
+   "Age (25%) SL": 71.08327735,
+   "Age (0% SL)": 70.10395094
+ },
+ {
+   "Name of College": "Loyola University Chicago",
+   "Type": "Private",
+   "Annual Cost": "$56,728",
+   "Age (100% SL)": 71.48057407,
+   "Age (75% SL)": 70.40037044,
+   "Age (50% SL)": 69.32016681,
+   "Age (25%) SL": 68.23996317,
+   "Age (0% SL)": 67.15975954
+ },
+ {
+   "Name of College": "Marquette University",
+   "Type": "Private",
+   "Annual Cost": "$54,550",
+   "Age (100% SL)": 70.14721247,
+   "Age (75% SL)": 69.14305442,
+   "Age (50% SL)": 68.13889636,
+   "Age (25%) SL": 67.13473831,
+   "Age (0% SL)": 66.13058026
+ },
+ {
+   "Name of College": "University at Buffalo--SUNY",
+   "Type": "Public",
+   "Annual Cost": "$38,898",
+   "Age (100% SL)": 72.92523161,
+   "Age (75% SL)": 72.11984229,
+   "Age (50% SL)": 71.31445298,
+   "Age (25%) SL": 70.50906367,
+   "Age (0% SL)": 69.70367436
+ },
+ {
+   "Name of College": "University of Delaware",
+   "Type": "Public",
+   "Annual Cost": "$45,450",
+   "Age (100% SL)": 69.96500833,
+   "Age (75% SL)": 69.114433,
+   "Age (50% SL)": 68.26385767,
+   "Age (25%) SL": 67.41328234,
+   "Age (0% SL)": 66.56270701
+ },
+ {
+   "Name of College": "University of Iowa",
+   "Type": "Public",
+   "Annual Cost": "$41,749",
+   "Age (100% SL)": 70.00028639,
+   "Age (75% SL)": 69.21517836,
+   "Age (50% SL)": 68.43007033,
+   "Age (25%) SL": 67.6449623,
+   "Age (0% SL)": 66.85985428
+ },
+ {
+   "Name of College": "Illinois Institute of Technology",
+   "Type": "Private",
+   "Annual Cost": "$60,326",
+   "Age (100% SL)": 69.51227169,
+   "Age (75% SL)": 68.4300893,
+   "Age (50% SL)": 67.34790691,
+   "Age (25%) SL": 66.26572452,
+   "Age (0% SL)": 65.18354213
+ },
+ {
+   "Name of College": "Miami University--Oxford",
+   "Type": "Public",
+   "Annual Cost": "$44,717",
+   "Age (100% SL)": 69.83039616,
+   "Age (75% SL)": 68.99889781,
+   "Age (50% SL)": 68.16739945,
+   "Age (25%) SL": 67.3359011,
+   "Age (0% SL)": 66.50440274
+ },
+ {
+   "Name of College": "University of Colorado--Boulder",
+   "Type": "Public",
+   "Annual Cost": "$48,428",
+   "Age (100% SL)": 69.90501813,
+   "Age (75% SL)": 69.01261111,
+   "Age (50% SL)": 68.12020409,
+   "Age (25%) SL": 67.22779706,
+   "Age (0% SL)": 66.33539004
+ },
+ {
+   "Name of College": "University of Denver",
+   "Type": "Private",
+   "Annual Cost": "$63,236",
+   "Age (100% SL)": 71.34315498,
+   "Age (75% SL)": 70.16067571,
+   "Age (50% SL)": 68.97819645,
+   "Age (25%) SL": 67.79571719,
+   "Age (0% SL)": 66.61323792
+ },
+ {
+   "Name of College": "University of San Francisco",
+   "Type": "Private",
+   "Annual Cost": "$60,746",
+   "Age (100% SL)": 70.6550835,
+   "Age (75% SL)": 69.53301611,
+   "Age (50% SL)": 68.41094871,
+   "Age (25%) SL": 67.28888132,
+   "Age (0% SL)": 66.16681392
+ },
+ {
+   "Name of College": "University of Vermont",
+   "Type": "Public",
+   "Annual Cost": "$53,656",
+   "Age (100% SL)": 71.31837808,
+   "Age (75% SL)": 70.29778638,
+   "Age (50% SL)": 69.27719468,
+   "Age (25%) SL": 68.25660298,
+   "Age (0% SL)": 67.23601128
+ }
+]
 let collegeName = "";
 function getCollege(name) {
 let college
